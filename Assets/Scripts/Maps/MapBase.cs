@@ -31,7 +31,6 @@ public class MapBase : MonoBehaviour
         if (pivotPos > _pos)
         {
             pivotPos -= 30;
-            Debug.Log(pivotPos);
             maps[index].gameObject.SetActive(false);
             maps[index + 2].gameObject.SetActive(true);
             index++;
