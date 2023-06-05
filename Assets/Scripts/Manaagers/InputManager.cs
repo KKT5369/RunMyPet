@@ -1,22 +1,31 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : SingleTon<InputManager>
 {
     public Action jump;
 
-    public bool isJump = false;
+
+    public bool curJump = true;
+
+    private void Awake()
+    {
+    }
+    
+    void Started(InputAction.CallbackContext context)
+    {
+        Debug.Log("started!");
+    }
     
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            if (!isJump)
-            {
-                Debug.Log("점프");
-                jump.Invoke();
-                isJump = true;
-            }
-        }
+        // if (curJump && Input.GetKey(KeyCode.Space))
+        // {
+        //     jump.Invoke();
+        //     curJump = false;
+        // }
     }
+    
+    
 }
