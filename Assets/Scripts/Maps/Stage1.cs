@@ -18,7 +18,4 @@ public class Stage1 : MapBase
         MoveMap(speed);
         MapSwitch();
     }
-    
-    
-    
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MapBase : MonoBehaviour
 {
-    protected GameObject[] maps;
+    protected GameObject[] floors;
     private float _pos;
     private int index = 0;
     private float pivotPos = -30;
@@ -13,17 +13,16 @@ public class MapBase : MonoBehaviour
     protected void SetMaps()
     {
         int childCount = transform.childCount;
-        maps = new GameObject[childCount];
+        floors = new GameObject[childCount];
         for (int i = 0; i < childCount; i++)
         {
-            maps[i] = transform.GetChild(i).gameObject;
+            floors[i] = transform.GetChild(i).gameObject;
         }
-        
     }
 
     protected void MapSwitch()
     {
-        if (index == maps.Length - 2)
+        if (index == floors.Length - 2)
         {
             return;
         }
@@ -31,8 +30,8 @@ public class MapBase : MonoBehaviour
         if (pivotPos > _pos)
         {
             pivotPos -= 30;
-            maps[index].gameObject.SetActive(false);
-            maps[index + 2].gameObject.SetActive(true);
+            floors[index].gameObject.SetActive(false);
+            floors[index + 2].gameObject.SetActive(true);
             index++;
         }
     }
