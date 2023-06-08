@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage1 : MapBase
+public class Map01 : MapBase
 {
     public float speed;
-    
+
     private void Awake()
     {
         speed = 10f;

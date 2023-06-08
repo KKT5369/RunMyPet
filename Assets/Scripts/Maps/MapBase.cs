@@ -8,7 +8,7 @@ public class MapBase : MonoBehaviour
     protected GameObject[] floors;
     private float _pos;
     private int index = 0;
-    private float pivotPos = -30;
+    protected float pivotPos = -50;
 
     protected void SetMaps()
     {
@@ -29,7 +29,7 @@ public class MapBase : MonoBehaviour
         _pos = transform.position.x;
         if (pivotPos > _pos)
         {
-            pivotPos -= 30;
+            pivotPos -= 50;
             floors[index].gameObject.SetActive(false);
             floors[index + 2].gameObject.SetActive(true);
             index++;
