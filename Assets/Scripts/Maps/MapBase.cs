@@ -18,6 +18,9 @@ public class MapBase : MonoBehaviour
         {
             floors[i] = transform.GetChild(i).gameObject;
         }
+
+        var go = Resources.Load("EndPoint");
+        Instantiate(go, floors[childCount - 1].transform);
     }
 
     protected void MapSwitch()
@@ -40,7 +43,4 @@ public class MapBase : MonoBehaviour
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
     }
-    
-    
-    
 }

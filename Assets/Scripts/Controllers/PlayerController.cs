@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -33,6 +34,20 @@ public class PlayerController : MonoBehaviour
         if (LayerMask.NameToLayer("Floor") == layer)
         {
             _jumpIndex = 0;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        int layer = col.gameObject.layer;
+        if (LayerMask.NameToLayer("Coin") == layer)
+        {
+            col.gameObject.SetActive(false);
+            GameManager.Instance.addCoin.Invoke();
+        }
+        else if (col.gameObject.name.Equals("EndPoint(Clone)"))
+        {
+            Debug.Log($"게임종료!! 스코어는 ==> {GameManager.Instance.Score}");
         }
     }
 }

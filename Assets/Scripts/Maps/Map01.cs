@@ -11,6 +11,7 @@ public class Map01 : MapBase
     {
         speed = 10f;
         SetMaps();
+        GameManager.Instance.addCoin = AddCoin;
     }
 
     private void Update()
@@ -18,4 +19,10 @@ public class Map01 : MapBase
         MoveMap(speed);
         MapSwitch();
     }
+
+    void AddCoin()
+    {
+        GameManager.Instance.score += 10;
+    }
+    
 }

@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class StageController : MonoBehaviour
 {
-    private MapBase map;
-
+    private GameObject map;
+    
     private void Awake()
     {
         GameManager.Instance.SettingMap("Map_01");
-        GameObject go = GameManager.Instance.GetMap();
-        Instantiate(go, transform);
+        map = GameManager.Instance.GetMap();
+        Instantiate(map, transform);
+
+
     }
 }
