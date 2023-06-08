@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         if (LayerMask.NameToLayer("Coin") == layer)
         {
             col.gameObject.SetActive(false);
-            GameManager.Instance.addCoin.Invoke();
+            GameManager.Instance.AddCoin.Invoke();
         }
         else if (col.gameObject.name.Equals("EndPoint(Clone)"))
         {

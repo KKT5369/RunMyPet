@@ -7,12 +7,19 @@ using UnityEngine;
 public class GameManager : SingleTon<GameManager>
 {
     private string _sellectMap;
-    public int score;
-    public Action addCoin;
+    private int score;
+    private Action addCoin;
 
     public int Score
     {
         get => score;
+        set => score = value;
+    }
+
+    public Action AddCoin
+    {
+        get => addCoin;
+        set => addCoin = value;
     }
     
     public void SettingMap(string sellectMap)

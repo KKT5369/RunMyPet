@@ -12,7 +12,5 @@ public class StageController : MonoBehaviour
         GameManager.Instance.SettingMap("Map_01");
         map = GameManager.Instance.GetMap();
         Instantiate(map, transform);
-
-
     }
 }
