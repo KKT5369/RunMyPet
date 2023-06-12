@@ -9,7 +9,7 @@ public class StageController : MonoBehaviour
     
     private void Awake()
     {
-        GameManager.Instance.SettingMap(Stage.Map01,30);
+        GameManager.Instance.SettingMap(Stage.Map01,20);
         Init();
     }
 

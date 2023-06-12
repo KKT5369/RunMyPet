@@ -7,8 +7,8 @@ using UnityEngine;
 public class GameManager : SingleTon<GameManager>
 {
     private Stage _sellectMap;
-    private int _score;
     private Action _addCoin;
+    private int _score;
     private float _gameSpeed;
 
     public int Score
