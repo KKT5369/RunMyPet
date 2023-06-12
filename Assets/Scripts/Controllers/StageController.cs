@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class StageController : MonoBehaviour
 {
-    private GameObject map;
+    private MapBase _map;
     
     private void Awake()
     {
-        GameManager.Instance.SettingMap("Map_01");
-        map = GameManager.Instance.GetMap();
-        Instantiate(map, transform);
+        GameManager.Instance.SettingMap(Stage.Map01,30);
+        Init();
+    }
+
+    private void Init()
+    {
+        GameObject map = GameManager.Instance.GetMap();
+        _map = Instantiate(map, transform).GetComponent<MapBase>();
+        GameManager.Instance.AddCoin = _map.AddCoin;
+        _map.speed = GameManager.Instance.GameSpeed;
     }
 }

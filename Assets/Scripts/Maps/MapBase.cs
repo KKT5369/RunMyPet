@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MapBase : MonoBehaviour
 {
+    public float speed;
     protected GameObject[] floors;
     private float _pos;
     private int index = 0;
@@ -30,7 +31,7 @@ public class MapBase : MonoBehaviour
             return;
         }
         _pos = transform.position.x;
-        if (pivotPos > _pos)
+        if (pivotPos - 5f > _pos)
         {
             pivotPos -= 50;
             floors[index].gameObject.SetActive(false);
@@ -39,8 +40,13 @@ public class MapBase : MonoBehaviour
         }
     }
 
-    protected void MoveMap(float speed)
+    public void MoveMap(float speed)
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
+    }
+    
+    public virtual void AddCoin()
+    {
+        GameManager.Instance.Score += 10;
     }
 }

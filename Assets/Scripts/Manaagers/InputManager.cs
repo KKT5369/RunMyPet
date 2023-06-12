@@ -26,6 +26,4 @@ public class InputManager : SingleTon<InputManager>
         //     curJump = false;
         // }
     }
-    
-    
 }

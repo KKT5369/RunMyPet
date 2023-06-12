@@ -6,30 +6,45 @@ using UnityEngine;
 
 public class GameManager : SingleTon<GameManager>
 {
-    private string _sellectMap;
-    private int score;
-    private Action addCoin;
+    private Stage _sellectMap;
+    private int _score;
+    private Action _addCoin;
+    private float _gameSpeed;
 
     public int Score
     {
-        get => score;
-        set => score = value;
+        get => _score;
+        set => _score = value;
     }
 
     public Action AddCoin
     {
-        get => addCoin;
-        set => addCoin = value;
+        get => _addCoin;
+        set => _addCoin = value;
     }
     
-    public void SettingMap(string sellectMap)
+    public float GameSpeed
     {
-        this._sellectMap = sellectMap;
+        get => _gameSpeed;
+        private set => _gameSpeed = value;
+    }
+    
+    public void SettingMap(Stage Stage,int gameSpeed)
+    {
+        this._sellectMap = Stage;
+        this.GameSpeed = gameSpeed;
     }
 
     public GameObject GetMap()
     {
-        var go = ResourcesLoadManager.Instance.LoadMap(_sellectMap);
+        var go = ResourcesLoadManager.Instance.LoadMap(_sellectMap.ToString());
         return go;
     }
+}
+
+public enum Stage
+{
+    Map01,
+    Map02,
+    Map03,
 }

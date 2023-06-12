@@ -5,24 +5,20 @@ using UnityEngine;
 
 public class Map01 : MapBase
 {
-    public float speed;
-
     private void Awake()
     {
-        speed = 10f;
-        SetMaps();
-        GameManager.Instance.AddCoin = AddCoin;
+        base.SetMaps();
     }
 
     private void Update()
     {
-        MoveMap(speed);
-        MapSwitch();
+        base.MoveMap(speed);
+        base.MapSwitch();
     }
 
-    void AddCoin()
+    public override void AddCoin()
     {
-        GameManager.Instance.Score += 10;
+        GameManager.Instance.Score += 20;
     }
     
 }
