@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
+    [SerializeField] private Animator animator;
     public float jumpPower = 2;
     private int _jumpIndex;
     private Vector2 _vector2;
@@ -18,11 +20,14 @@ public class PlayerController : MonoBehaviour
     {
         if (_jumpIndex == 0)
         {
+            animator.SetBool("isRun",false);
             _jumpIndex++;
             _rigidbody2D.AddForce(Vector2.up * (jumpPower * 200));
+            
         }
         else if (_jumpIndex == 1)
         {
+            animator.SetBool("isRun",false);
             _jumpIndex++;
             _rigidbody2D.AddForce(Vector2.up * (jumpPower * 100));
         }
@@ -30,18 +35,23 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        int layer = col.gameObject.layer;
-        if (LayerMask.NameToLayer("Floor") == layer)
+        int otherLayer = col.gameObject.layer;
+        if (LayerMask.NameToLayer("Floor") == otherLayer)
         {
+            animator.SetBool("isRun",true);
             _jumpIndex = 0;
+        }
+        else if (otherLayer == (int)LayerNum.Wall)
+        {
+            Debug.Log("꽈광");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        int layer = col.gameObject.layer;
+        int otherLayer = col.gameObject.layer;
 
-        if (LayerMask.NameToLayer("Coin") == layer)
+        if (otherLayer == (int)LayerNum.Coin)
         {
             col.gameObject.SetActive(false);
             GameManager.Instance.AddCoin.Invoke();
@@ -55,7 +65,8 @@ public class PlayerController : MonoBehaviour
     }
 }
 
-enum Layer
+enum LayerNum
 {
     Coin = 7,
+    Wall = 8,
 }
