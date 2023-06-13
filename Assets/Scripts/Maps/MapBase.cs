@@ -7,9 +7,11 @@ public class MapBase : MonoBehaviour
 {
     public float speed;
     protected GameObject[] floors;
+    private float floorPosx = 0;
     private float _pos;
     private int index = 0;
     protected float pivotPos = -50;
+    
 
     protected void SetMaps()
     {
@@ -17,7 +19,10 @@ public class MapBase : MonoBehaviour
         floors = new GameObject[childCount];
         for (int i = 0; i < childCount; i++)
         {
-            floors[i] = transform.GetChild(i).gameObject;
+            GameObject floor = transform.GetChild(i).gameObject;
+            floor.transform.position = new Vector3(floorPosx - 3,-6);
+            floorPosx += 50;
+            floors[i] = floor;
         }
 
         var go = Resources.Load("EndPoint");

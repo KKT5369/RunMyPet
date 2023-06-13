@@ -5,3 +5,9 @@ public enum ItemType
     SilverCoin,
     GoldCoin,
 }
+
+enum LayerNum
+{
+    Coin = 7,
+    Wall = 8,
+}

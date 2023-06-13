@@ -57,8 +57,4 @@ public class PlayerController : MonoBehaviour
     }
 }
 
-enum LayerNum
-{
-    Coin = 7,
-    Wall = 8,
-}
+
