@@ -12,13 +12,11 @@ public class Map01 : MapBase
 
     private void Update()
     {
-        base.MoveMap(speed);
+        base.MoveMap(GameManager.Instance._gameSpeed);
         base.MapSwitch();
+        if (Input.GetKey(KeyCode.W))
+        {
+            GameManager.Instance._gameSpeed += 2;
+        }
     }
-
-    public override void AddCoin()
-    {
-        GameManager.Instance.Score += 20;
-    }
-    
 }

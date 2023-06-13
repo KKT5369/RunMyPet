@@ -49,15 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        int otherLayer = col.gameObject.layer;
-
-        if (otherLayer == (int)LayerNum.Coin)
-        {
-            col.gameObject.SetActive(false);
-            GameManager.Instance.AddCoin.Invoke();
-            Debug.Log("코인");
-        }
-        else if (col.gameObject.name.Equals("EndPoint(Clone)"))
+        if (col.gameObject.name.Equals("EndPoint(Clone)"))
         {
             Debug.Log($"게임종료!! 스코어는 ==> {GameManager.Instance.Score}");
             Time.timeScale = 0;

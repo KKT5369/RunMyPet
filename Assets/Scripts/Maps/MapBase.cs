@@ -44,9 +44,4 @@ public class MapBase : MonoBehaviour
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
     }
-    
-    public virtual void AddCoin()
-    {
-        GameManager.Instance.Score += 10;
-    }
 }

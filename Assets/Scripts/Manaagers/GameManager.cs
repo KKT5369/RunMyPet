@@ -7,9 +7,8 @@ using UnityEngine;
 public class GameManager : SingleTon<GameManager>
 {
     private Stage _sellectMap;
-    private Action _addCoin;
     private int _score;
-    private float _gameSpeed;
+    public float _gameSpeed;
 
     public int Score
     {
@@ -17,12 +16,6 @@ public class GameManager : SingleTon<GameManager>
         set => _score = value;
     }
 
-    public Action AddCoin
-    {
-        get => _addCoin;
-        set => _addCoin = value;
-    }
-    
     public float GameSpeed
     {
         get => _gameSpeed;
@@ -39,6 +32,11 @@ public class GameManager : SingleTon<GameManager>
     {
         var go = ResourcesLoadManager.Instance.LoadMap(_sellectMap.ToString());
         return go;
+    }
+
+    public void ItemAction(ItemBase itembase)
+    {
+        itembase.Action();
     }
 }
 

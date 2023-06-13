@@ -17,7 +17,5 @@ public class StageController : MonoBehaviour
     {
         GameObject map = GameManager.Instance.GetMap();
         _map = Instantiate(map, transform).GetComponent<MapBase>();
-        GameManager.Instance.AddCoin = _map.AddCoin;
-        _map.speed = GameManager.Instance.GameSpeed;
     }
 }
