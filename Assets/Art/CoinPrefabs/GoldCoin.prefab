@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 221892585371568894}
   - component: {fileID: 359172055881930410}
   - component: {fileID: 3299336754666680825}
-  - component: {fileID: 5807444249069456673}
+  - component: {fileID: 7819879926283894254}
   m_Layer: 7
   m_Name: GoldCoin
   m_TagString: Untagged
@@ -125,7 +125,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5807444249069456673
+--- !u!114 &7819879926283894254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6174093718249381307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52d86e9525cdad4fadb47384b783b2d, type: 3}
+  m_Script: {fileID: 11500000, guid: a8dc56de1a4043f4990ff3d467b58864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 2

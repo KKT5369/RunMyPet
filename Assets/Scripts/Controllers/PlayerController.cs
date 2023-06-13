@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isRun",false);
             _jumpIndex++;
-            _rigidbody2D.AddForce(Vector2.up * (jumpPower * 100));
+            _rigidbody2D.AddForce(Vector2.up * (jumpPower * 200));
         }
     }
 
