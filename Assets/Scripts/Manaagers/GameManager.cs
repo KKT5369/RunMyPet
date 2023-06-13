@@ -9,7 +9,13 @@ public class GameManager : SingleTon<GameManager>
     private Stage _sellectMap;
     private int _score;
     public float _gameSpeed;
-
+    private PlayerController _playerController;
+    
+    public PlayerController Player
+    {
+        get => _playerController;
+    }
+    
     public int Score
     {
         get => _score;
@@ -24,14 +30,16 @@ public class GameManager : SingleTon<GameManager>
     
     public void SettingMap(Stage Stage,int gameSpeed)
     {
-        this._sellectMap = Stage;
-        this.GameSpeed = gameSpeed;
+        _sellectMap = Stage;
+        GameSpeed = gameSpeed;
+        var playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player"));
+        _playerController = playerGo.GetComponent<PlayerController>();
     }
 
     public GameObject GetMap()
     {
-        var go = ResourcesLoadManager.Instance.LoadMap(_sellectMap.ToString());
-        return go;
+        var mapGo = ResourcesLoadManager.Instance.LoadMap(_sellectMap.ToString());
+        return mapGo;
     }
 
     public void ItemAction(ItemBase itembase)

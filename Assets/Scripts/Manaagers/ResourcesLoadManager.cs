@@ -18,7 +18,7 @@ public class ResourcesLoadManager : SingleTon<ResourcesLoadManager>
     {
         string _path = _charPath + path;
         var go = Resources.Load<PlayerController>(_path).gameObject;
-        return null;
+        return go;
     }
     
 }

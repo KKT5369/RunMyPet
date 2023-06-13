@@ -18,18 +18,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputValue value)
     {
-        if (_jumpIndex == 0)
+        if (_jumpIndex <= 2)
         {
             animator.SetBool("isRun",false);
-            _jumpIndex++;
             _rigidbody2D.AddForce(Vector2.up * (jumpPower * 200));
-            
-        }
-        else if (_jumpIndex == 1)
-        {
-            animator.SetBool("isRun",false);
             _jumpIndex++;
-            _rigidbody2D.AddForce(Vector2.up * (jumpPower * 200));
         }
     }
 
@@ -40,10 +33,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isRun",true);
             _jumpIndex = 0;
-        }
-        else if (otherLayer == (int)LayerNum.Wall)
-        {
-            Debug.Log("꽈광");
         }
     }
 
