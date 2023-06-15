@@ -15,6 +15,6 @@ public class StageController : MonoBehaviour
     {
         GameManager.Instance.SettingMap();
         GameManager.Instance.GetMap();
-        UIManager.Instance.CreateUI<UIGame>();
+        UIManager.Instance.OpenUI<UIGame>();
     }
 }

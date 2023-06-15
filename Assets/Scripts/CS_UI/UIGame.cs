@@ -28,7 +28,7 @@ public class UIGame : MonoBehaviour
         btnMenu.onClick.AddListener((() =>
         {
             Time.timeScale = 0;
-            UIManager.Instance.CreateUI<UIPopupMenu>();
+            UIManager.Instance.OpenUI<UIPopupMenu>();
         }));
     }
 }
