@@ -19,9 +19,18 @@ public class UIPopupMenu : MonoBehaviour
     {
         btnContinue.onClick.AddListener((() =>
         {
-            Time.timeScale = 1;
-            UIManager.Instance.CloseUI<UIPopupMenu>();
+            CloseUI();
         }));
-        
+        btnRestart.onClick.AddListener((() =>
+        {
+            GameManager.Instance.Restart();
+            CloseUI();
+        }));
+    }
+
+    void CloseUI()
+    {
+        Time.timeScale = 1;
+        UIManager.Instance.CloseUI<UIPopupMenu>();
     }
 }

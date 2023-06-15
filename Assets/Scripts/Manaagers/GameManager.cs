@@ -6,15 +6,18 @@ using UnityEngine;
 
 public class GameManager : SingleTon<GameManager>
 {
+    public Action gameInit;
+    
     private int _score;
     public float _gameSpeed;
     private PlayerController _playerController;
     
     [Header("맵 관련")]
-    private List<GameObject> mapGo = new();
-    private GameObject purMapGo;
-    private int stageIndex = 0;
+    private List<GameObject> _mapPrefabs = new();
+    private List<GameObject> _objMaps = new();
+    private int stageIndex;
     private int mapQue;
+    private GameObject playerGo;
     
     public PlayerController Player
     {
@@ -33,17 +36,15 @@ public class GameManager : SingleTon<GameManager>
         private set => _gameSpeed = value;
     }
 
-    private void Awake()
-    {
-        mapGo = ResourcesLoadManager.Instance.LoadMap();
-        mapQue = mapGo.Count;
-        _gameSpeed = 20;
-    }
-    
     public void SettingMap()
     {
-        var playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player"));
+        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player"));
         _playerController = playerGo.GetComponent<PlayerController>();
+        _mapPrefabs = ResourcesLoadManager.Instance.LoadMap();
+        mapQue = _mapPrefabs.Count;
+        _score = 0;
+        _gameSpeed = 20;
+        stageIndex = 0;
     }
 
     public void GetMap()
@@ -56,11 +57,23 @@ public class GameManager : SingleTon<GameManager>
         }
         else if (stageIndex != 0)
         {
-            purMapGo.gameObject.SetActive(false);
+            _objMaps[stageIndex-1].gameObject.SetActive(false);
         }
-        purMapGo = Instantiate(mapGo[stageIndex]);
+        _objMaps.Add(Instantiate(_mapPrefabs[stageIndex]));
         stageIndex++;
         _gameSpeed += 2f;
+    }
+
+    public void Restart()
+    {
+        Destroy(playerGo);
+        foreach (var go in _objMaps)
+        {
+            Destroy(go);
+        }
+        
+        _objMaps.Clear();
+        gameInit.Invoke();
     }
 
     public void ItemAction(ItemBase itembase)
