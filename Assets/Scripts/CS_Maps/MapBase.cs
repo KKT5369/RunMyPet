@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class MapBase : MonoBehaviour
 {
-    public float speed;
+    private float speed;
     protected GameObject[] floors;
     private float floorPosx = 0;
     private float _pos;
@@ -22,7 +23,8 @@ public class MapBase : MonoBehaviour
 
     private void Update()
     {
-        MoveMap(GameManager.Instance._gameSpeed);
+        speed = GameManager.Instance._gameSpeed;
+        MoveMap(speed);
         MapSwitch();
         if (Input.GetKey(KeyCode.W))
         {
@@ -42,8 +44,9 @@ public class MapBase : MonoBehaviour
             floors[i] = floor;
         }
 
-        var go = Resources.Load("EndPoint");
-        Instantiate(go, floors[childCount - 1].transform);
+        var finshObj = Resources.Load("EndPoint");
+        var go = Instantiate(finshObj, floors[childCount - 1].transform) as GameObject;
+        go.transform.Translate(new Vector3(33,0,0));
     }
 
     protected void MapSwitch()

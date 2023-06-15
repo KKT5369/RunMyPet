@@ -48,9 +48,4 @@ public class GameManager : SingleTon<GameManager>
     }
 }
 
-public enum Stage
-{
-    Stage01,
-    Stage02,
-    Stage03,
-}
+
