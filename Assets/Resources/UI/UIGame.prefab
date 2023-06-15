@@ -609,8 +609,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD604\uC7AC \uC2A4\uCF54\uC5B4"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 17380209a77c77b4ba4f909e674e3e38, type: 2}
-  m_sharedMaterial: {fileID: -2320668144883065121, guid: 17380209a77c77b4ba4f909e674e3e38,
+  m_fontAsset: {fileID: 11400000, guid: b71a69ae803d1414b8ece806582a01e1, type: 2}
+  m_sharedMaterial: {fileID: -2669735798387790303, guid: b71a69ae803d1414b8ece806582a01e1,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
