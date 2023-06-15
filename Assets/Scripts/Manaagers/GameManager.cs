@@ -86,7 +86,8 @@ public class GameManager : SingleTon<GameManager>
     {
         itembase.Action();
     }
-
+    
+    // 코루틴을 실행 해줍니다.
     public void OnStartCoroutine(IEnumerator coroutine)
     {
         StartCoroutine(coroutine);
