@@ -50,7 +50,7 @@ public class GameManager : SingleTon<GameManager>
 
 public enum Stage
 {
-    Map01,
-    Map02,
-    Map03,
+    Stage01,
+    Stage02,
+    Stage03,
 }

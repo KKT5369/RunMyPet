@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MapBase : MonoBehaviour
 {
@@ -11,15 +12,31 @@ public class MapBase : MonoBehaviour
     private float _pos;
     private int index = 0;
     protected float pivotPos = -50;
-    
+
+    [SerializeField] private Transform pieceTransform;
+
+    private void Awake()
+    {
+        SetMaps();
+    }
+
+    private void Update()
+    {
+        MoveMap(GameManager.Instance._gameSpeed);
+        MapSwitch();
+        if (Input.GetKey(KeyCode.W))
+        {
+            GameManager.Instance._gameSpeed += 2;
+        }
+    }
 
     protected void SetMaps()
     {
-        int childCount = transform.childCount;
+        int childCount = pieceTransform.childCount;
         floors = new GameObject[childCount];
         for (int i = 0; i < childCount; i++)
         {
-            GameObject floor = transform.GetChild(i).gameObject;
+            GameObject floor = pieceTransform.GetChild(i).gameObject;
             floor.transform.position = new Vector3(floorPosx - 3,-6);
             floorPosx += 50;
             floors[i] = floor;
@@ -35,7 +52,7 @@ public class MapBase : MonoBehaviour
         {
             return;
         }
-        _pos = transform.position.x;
+        _pos = pieceTransform.position.x;
         if (pivotPos - 5f > _pos)
         {
             pivotPos -= 50;
@@ -47,6 +64,6 @@ public class MapBase : MonoBehaviour
 
     public void MoveMap(float speed)
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        pieceTransform.position += Vector3.left * speed * Time.deltaTime;
     }
 }
