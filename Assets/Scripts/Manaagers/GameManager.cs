@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class GameManager : SingleTon<GameManager>
 {
-    private Stage _sellectMap;
     private int _score;
     public float _gameSpeed;
     private PlayerController _playerController;
@@ -40,9 +39,8 @@ public class GameManager : SingleTon<GameManager>
         mapQue = mapGo.Count;
     }
     
-    public void SettingMap(Stage Stage,int gameSpeed)
+    public void SettingMap(int gameSpeed)
     {
-        _sellectMap = Stage;
         GameSpeed = gameSpeed;
         var playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player"));
         _playerController = playerGo.GetComponent<PlayerController>();
@@ -62,6 +60,7 @@ public class GameManager : SingleTon<GameManager>
         }
         purMapGo = Instantiate(mapGo[stageIndex]);
         stageIndex++;
+        _gameSpeed += 2f;
     }
 
     public void ItemAction(ItemBase itembase)

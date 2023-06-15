@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class UIManager : SingleTon<UIManager>
 {
+    private Dictionary<string, GameObject> UI = new();
+    GameObject _uiGo;
     
-
     public void CreateUI<T>()
     {
-        GameObject go = Resources.Load<GameObject>($"Prefabs/UI/{typeof(T).Name}");
-        Instantiate(go);
+        if (UI.TryGetValue(typeof(T).Name, out _uiGo))
+        {
+            _uiGo.SetActive(true);
+        }
+        else
+        {
+            GameObject go = Resources.Load<GameObject>($"UI/{typeof(T).Name}");
+            var ui = Instantiate(go);
+            UI.Add(typeof(T).Name,ui);
+        }
     }
 
-    public void CloseUI(GameObject go)
+    public void CloseUI<T>()
     {
-        Destroy(go);
+        if (!UI.TryGetValue(typeof(T).Name, out _uiGo))
+        {
+            _uiGo.SetActive(false);
+        }
     }
 }
