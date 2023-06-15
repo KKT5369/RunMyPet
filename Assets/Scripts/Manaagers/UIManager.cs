@@ -7,6 +7,7 @@ public class UIManager : SingleTon<UIManager>
     private Dictionary<string, GameObject> UI = new();
     GameObject _uiGo;
     
+    // UI를 찾아서 있으면 활성화 없으면 생성후 저장 합니다.
     public void CreateUI<T>()
     {
         if (UI.TryGetValue(typeof(T).Name, out _uiGo))
@@ -20,7 +21,8 @@ public class UIManager : SingleTon<UIManager>
             UI.Add(typeof(T).Name,ui);
         }
     }
-
+    
+    // UI를 찾아서 있으면 비활성화 합니다.
     public void CloseUI<T>()
     {
         if (UI.TryGetValue(typeof(T).Name, out _uiGo))

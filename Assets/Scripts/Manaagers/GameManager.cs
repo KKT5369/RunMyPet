@@ -35,7 +35,9 @@ public class GameManager : SingleTon<GameManager>
         get => _gameSpeed;
         private set => _gameSpeed = value;
     }
-
+    
+    
+    // 맵을 초기상태로 세팅 합니다.
     public void SettingMap()
     {
         playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player"));
@@ -46,7 +48,9 @@ public class GameManager : SingleTon<GameManager>
         _gameSpeed = 20;
         stageIndex = 0;
     }
-
+    
+    // 다음맵을 가져와서 생성하고 List로 저장 합니다.
+    // 이전 맵은 비활성화 시킵니다.
     public void GetMap()
     {
         if (mapQue <= stageIndex)
@@ -63,7 +67,8 @@ public class GameManager : SingleTon<GameManager>
         stageIndex++;
         _gameSpeed += 2f;
     }
-
+    
+    // 씬의 플레이어와 맵을 삭제하고 다시 세팅 합니다.
     public void Restart()
     {
         Destroy(playerGo);
@@ -75,7 +80,8 @@ public class GameManager : SingleTon<GameManager>
         _objMaps.Clear();
         gameInit.Invoke();
     }
-
+    
+    // 출동한 아이템의 이펙트를 실행 합니다.
     public void ItemAction(ItemBase itembase)
     {
         itembase.Action();

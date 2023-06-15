@@ -10,7 +10,6 @@ public class ResourcesLoadManager : SingleTon<ResourcesLoadManager>
 
     public List<GameObject> LoadMap()
     {
-        //var go = Resources.Load<MapBase>(_path).gameObject;
         var go = Resources.LoadAll<MapBase>(_mapPath);
         List<GameObject> gos = new List<GameObject>();
 
