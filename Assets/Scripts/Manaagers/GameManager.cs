@@ -11,6 +11,12 @@ public class GameManager : SingleTon<GameManager>
     public float _gameSpeed;
     private PlayerController _playerController;
     
+    [Header("맵 관련")]
+    private List<GameObject> mapGo = new();
+    private GameObject purMapGo;
+    private int stageIndex = 0;
+    private int mapQue;
+    
     public PlayerController Player
     {
         get => _playerController;
@@ -27,6 +33,12 @@ public class GameManager : SingleTon<GameManager>
         get => _gameSpeed;
         private set => _gameSpeed = value;
     }
+
+    private void Awake()
+    {
+        mapGo = ResourcesLoadManager.Instance.LoadMap();
+        mapQue = mapGo.Count;
+    }
     
     public void SettingMap(Stage Stage,int gameSpeed)
     {
@@ -36,10 +48,20 @@ public class GameManager : SingleTon<GameManager>
         _playerController = playerGo.GetComponent<PlayerController>();
     }
 
-    public GameObject GetMap()
+    public void GetMap()
     {
-        var mapGo = ResourcesLoadManager.Instance.LoadMap(_sellectMap.ToString());
-        return mapGo;
+        if (mapQue <= stageIndex)
+        {
+            Time.timeScale = 0;
+            Debug.Log($"게임끝!! 스코어는~!? {_score}");
+            return;
+        }
+        else if (stageIndex != 0)
+        {
+            purMapGo.gameObject.SetActive(false);
+        }
+        purMapGo = Instantiate(mapGo[stageIndex]);
+        stageIndex++;
     }
 
     public void ItemAction(ItemBase itembase)

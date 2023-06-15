@@ -40,8 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.name.Equals("EndPoint(Clone)"))
         {
-            Debug.Log($"게임종료!! 스코어는 ==> {GameManager.Instance.Score}");
-            Time.timeScale = 0;
+            GameManager.Instance.GetMap();
         }
     }
 }

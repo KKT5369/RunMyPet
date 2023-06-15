@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourcesLoadManager : SingleTon<ResourcesLoadManager>
@@ -7,11 +8,18 @@ public class ResourcesLoadManager : SingleTon<ResourcesLoadManager>
     private readonly string _charPath = "Characters/";
     
 
-    public GameObject LoadMap(string path)
+    public List<GameObject> LoadMap()
     {
-        string _path = _mapPath + path;
-        var go = Resources.Load<MapBase>(_path).gameObject;
-        return go;
+        //var go = Resources.Load<MapBase>(_path).gameObject;
+        var go = Resources.LoadAll<MapBase>(_mapPath);
+        List<GameObject> gos = new List<GameObject>();
+
+        foreach (var v in go)
+        {
+            gos.Add(v.gameObject);
+        }
+
+        return gos;
     }
 
     public GameObject LoadCharacter(string path)

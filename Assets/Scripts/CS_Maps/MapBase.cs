@@ -46,7 +46,6 @@ public class MapBase : MonoBehaviour
 
         var finshObj = Resources.Load("EndPoint");
         var go = Instantiate(finshObj, floors[childCount - 1].transform) as GameObject;
-        go.transform.Translate(new Vector3(33,0,0));
     }
 
     protected void MapSwitch()
