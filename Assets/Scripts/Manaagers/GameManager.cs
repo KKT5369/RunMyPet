@@ -37,11 +37,11 @@ public class GameManager : SingleTon<GameManager>
     {
         mapGo = ResourcesLoadManager.Instance.LoadMap();
         mapQue = mapGo.Count;
+        _gameSpeed = 20;
     }
     
-    public void SettingMap(int gameSpeed)
+    public void SettingMap()
     {
-        GameSpeed = gameSpeed;
         var playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player"));
         _playerController = playerGo.GetComponent<PlayerController>();
     }

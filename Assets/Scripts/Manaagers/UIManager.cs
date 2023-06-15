@@ -23,7 +23,7 @@ public class UIManager : SingleTon<UIManager>
 
     public void CloseUI<T>()
     {
-        if (!UI.TryGetValue(typeof(T).Name, out _uiGo))
+        if (UI.TryGetValue(typeof(T).Name, out _uiGo))
         {
             _uiGo.SetActive(false);
         }
