@@ -35,8 +35,8 @@ public class GameManager : SingleTon<GameManager>
         get => _gameSpeed;
         private set => _gameSpeed = value;
     }
-    
-    
+
+
     // 맵을 초기상태로 세팅 합니다.
     public void SettingMap()
     {
@@ -85,6 +85,11 @@ public class GameManager : SingleTon<GameManager>
     public void ItemAction(ItemBase itembase)
     {
         itembase.Action();
+    }
+
+    public void OnStartCoroutine(IEnumerator coroutine)
+    {
+        StartCoroutine(coroutine);
     }
 }
 
