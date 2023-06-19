@@ -6,6 +6,6 @@ public class UIIntro : MonoBehaviour
 {
     void Start()
     {
-        SceneLoadManager.Instance.LoadScene(SceneType.LobyScene);        
+        SceneLoadManager.Instance.LoadScene(SceneType.LobyScene);
     }
 }

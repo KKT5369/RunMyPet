@@ -1,18 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UILoby : MonoBehaviour
 {
-    public Button btn;
+    [SerializeField] private Button btnMenu;
+    [SerializeField] private Button btnTest;
 
     private void Awake()
     {
-        btn.onClick.AddListener((() =>
+        btnMenu.onClick.AddListener((() =>
         {
-            SceneLoadManager.Instance.LoadScene(SceneType.GameScene);
+            UIManager.Instance.OpenUI<UIPopupMenu>();
         }));
+        btnTest.onClick.AddListener((() =>
+        {
+            ConfirmData confirmData = new() { title = "게임시작", body = "준비가 되었나요?" };
+            ConfirmManager.Instance.OpenPopup(confirmData,(() => SceneLoadManager.Instance.LoadScene(SceneType.GameScene)));
+        }));
+                
     }
 }

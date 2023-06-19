@@ -40,4 +40,15 @@ public class UIManager : SingleTon<UIManager>
 
         return null;
     }
+
+    public void ClearUI()
+    {
+        if (UI == null) return;
+        
+        foreach (var pair in UI)
+        {
+            Destroy(pair.Value);
+        }
+        UI.Clear();
+    }
 }

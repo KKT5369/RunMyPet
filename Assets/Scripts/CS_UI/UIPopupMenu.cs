@@ -9,13 +9,39 @@ public class UIPopupMenu : MonoBehaviour
     [SerializeField] private Button btnContinue;
     [SerializeField] private Button btnRestart;
     [SerializeField] private Button btnLobby;
+    [SerializeField] private Button btnClose;
     
     void Start()
     {
-        SetAddListener();
+        switch (GameManager.Instance.purScene)
+        {
+            case SceneType.LobyScene:
+                LobyAddListener();
+                break;
+            case SceneType.GameScene:
+                GameAddListener();
+                break;
+        }
+        btnClose.onClick.AddListener((() => UIManager.Instance.CloseUI<UIPopupMenu>()));
     }
 
-    void SetAddListener()
+    void LobyAddListener()
+    {
+        btnContinue.interactable = false;
+        btnContinue.GetComponent<Image>().color = Color.black;
+        btnRestart.interactable = false;
+        btnRestart.GetComponent<Image>().color = Color.black;
+        btnLobby.onClick.AddListener((() =>
+        {
+            ConfirmData data = new ConfirmData() { title = "가려고?", body = "진짜 가려고?" };
+            ConfirmManager.Instance.OpenPopup(data, () =>
+            {
+                Application.Quit();
+            });
+        }));
+    }
+    
+    void GameAddListener()
     {
         btnContinue.onClick.AddListener((() =>
         {
@@ -31,6 +57,7 @@ public class UIPopupMenu : MonoBehaviour
             ConfirmData data = new ConfirmData() { title = "로비로?", body = "진짜 로비로 가려고?" };
             ConfirmManager.Instance.OpenPopup(data, () =>
             {
+                
                 SceneLoadManager.Instance.LoadScene(SceneType.LobyScene);
             });
         }));

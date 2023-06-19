@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoadManager : SingleTon<SceneLoadManager>
@@ -9,6 +10,9 @@ public class SceneLoadManager : SingleTon<SceneLoadManager>
     public void LoadScene(SceneType scene)
     {
         _scene = scene;
+        GameManager.Instance.purScene = scene;
+        Time.timeScale = 1;
+        UIManager.Instance.ClearUI();
         SceneManager.LoadScene("LoadingScene");
     }
     

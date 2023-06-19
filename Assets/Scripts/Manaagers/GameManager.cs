@@ -7,6 +7,7 @@ using UnityEngine;
 public class GameManager : SingleTon<GameManager>
 {
     public Action gameInit;
+    public SceneType purScene;
     
     private int _score;
     public float _gameSpeed;
