@@ -15,7 +15,7 @@ public class UILoby : MonoBehaviour
         btnTest.onClick.AddListener((() =>
         {
             ConfirmData confirmData = new() { title = "게임시작", body = "준비가 되었나요?" };
-            ConfirmManager.Instance.OpenPopup(confirmData,(() => SceneLoadManager.Instance.LoadScene(SceneType.GameScene)));
+            PopupManager.Instance.ConfirmPopup(confirmData,(() => SceneLoadManager.Instance.LoadScene(SceneType.GameScene)));
         }));
                 
     }

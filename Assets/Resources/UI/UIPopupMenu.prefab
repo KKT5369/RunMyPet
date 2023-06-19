@@ -240,6 +240,8 @@ MonoBehaviour:
   btnRestart: {fileID: 5397310874169613247}
   btnLobby: {fileID: 5397310873666116978}
   btnClose: {fileID: 2877752282105569793}
+  firstBtnTxt: {fileID: 5397310872989038933}
+  twoBtnTxt: {fileID: 5397310874884867454}
 --- !u!1 &5397310872989038923
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +254,7 @@ GameObject:
   - component: {fileID: 5397310872989038934}
   - component: {fileID: 5397310872989038933}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: firstBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1107,7 +1109,7 @@ GameObject:
   - component: {fileID: 5397310874884867455}
   - component: {fileID: 5397310874884867454}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: twoBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

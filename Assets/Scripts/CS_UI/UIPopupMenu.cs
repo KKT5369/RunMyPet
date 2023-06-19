@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +8,9 @@ public class UIPopupMenu : MonoBehaviour
     [SerializeField] private Button btnRestart;
     [SerializeField] private Button btnLobby;
     [SerializeField] private Button btnClose;
+
+    [SerializeField] private TMP_Text firstBtnTxt;
+    [SerializeField] private TMP_Text twoBtnTxt;
     
     void Start()
     {
@@ -22,19 +23,19 @@ public class UIPopupMenu : MonoBehaviour
                 GameAddListener();
                 break;
         }
-        btnClose.onClick.AddListener((() => UIManager.Instance.CloseUI<UIPopupMenu>()));
+        btnClose.onClick.AddListener((() => CloseUI()));
     }
 
     void LobyAddListener()
     {
         btnContinue.interactable = false;
-        btnContinue.GetComponent<Image>().color = Color.black;
+        firstBtnTxt.text = "닉네임 변경";
         btnRestart.interactable = false;
-        btnRestart.GetComponent<Image>().color = Color.black;
+        twoBtnTxt.text = "캐릭터 선택";
         btnLobby.onClick.AddListener((() =>
         {
             ConfirmData data = new ConfirmData() { title = "가려고?", body = "진짜 가려고?" };
-            ConfirmManager.Instance.OpenPopup(data, () =>
+            PopupManager.Instance.ConfirmPopup(data, () =>
             {
                 Application.Quit();
             });
@@ -55,7 +56,7 @@ public class UIPopupMenu : MonoBehaviour
         btnLobby.onClick.AddListener((() =>
         {
             ConfirmData data = new ConfirmData() { title = "로비로?", body = "진짜 로비로 가려고?" };
-            ConfirmManager.Instance.OpenPopup(data, () =>
+            PopupManager.Instance.ConfirmPopup(data, () =>
             {
                 
                 SceneLoadManager.Instance.LoadScene(SceneType.LobyScene);
