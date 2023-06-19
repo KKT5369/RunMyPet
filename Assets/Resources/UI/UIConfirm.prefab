@@ -467,6 +467,7 @@ GameObject:
   - component: {fileID: 4532550246263370972}
   - component: {fileID: 4532550246263370971}
   - component: {fileID: 4532550246263370970}
+  - component: {fileID: 8858900814310560067}
   m_Layer: 5
   m_Name: UIConfirm
   m_TagString: Untagged
@@ -556,6 +557,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8858900814310560067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532550246263370969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf650ad5eb608f40a20187648dadeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 4532550246705557350}
+  body: {fileID: 4532550246392467215}
+  btnOkey: {fileID: 4532550245639234723}
+  btnCancel: {fileID: 4532550245793178003}
 --- !u!1 &4532550246392467213
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,4 +30,14 @@ public class UIManager : SingleTon<UIManager>
             _uiGo.SetActive(false);
         }
     }
+
+    public GameObject GetUI<T>()
+    {
+        if (UI.TryGetValue(typeof(T).Name, out _uiGo))
+        {
+            return _uiGo;
+        }
+
+        return null;
+    }
 }
