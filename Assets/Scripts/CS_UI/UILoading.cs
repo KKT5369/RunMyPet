@@ -24,17 +24,17 @@ public class UILoading : MonoBehaviour
         title.text = "준비가 거이다 끝났어요!";
         float timer = Time.unscaledDeltaTime;
         
-        while (progressBar.fillAmount <= 1f)
+        while (progressBar.fillAmount <= 0.85f)
         {
+            Debug.Log("로딩중...");
             progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount, 0.9f, timer);
-            yield return new WaitForSeconds(0.5f);
-            if (op.progress >= 0.89f)
-            {
-                progressBar.fillAmount = 1f;
-                yield return new WaitForSeconds(0.5f);
-                op.allowSceneActivation = true;
-                yield break;
-            }
+            yield return null;
+        }
+        if (op.progress >= 0.8f)
+        {
+            Debug.Log("로딩완료");
+            progressBar.fillAmount = 1f;
+            op.allowSceneActivation = true;
         }
     }
 }

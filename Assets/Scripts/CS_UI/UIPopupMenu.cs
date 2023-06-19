@@ -29,7 +29,10 @@ public class UIPopupMenu : MonoBehaviour
         btnLobby.onClick.AddListener((() =>
         {
             ConfirmData data = new ConfirmData() { title = "로비로?", body = "진짜 로비로 가려고?" };
-            ConfirmManager.Instance.OpenPopup(data,(() => CloseUI()));
+            ConfirmManager.Instance.OpenPopup(data, () =>
+            {
+                SceneLoadManager.Instance.LoadScene(SceneType.LobyScene);
+            });
         }));
     }
 
