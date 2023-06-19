@@ -6,3 +6,9 @@ public enum ItemType
     GoldCoin,
     SpeedItem,
 }
+
+public enum SceneType
+{
+    LobyScene,
+    GameScene,
+}
