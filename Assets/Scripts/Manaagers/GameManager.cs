@@ -19,7 +19,13 @@ public class GameManager : SingleTon<GameManager>
     private int stageIndex;
     private int mapQue;
     private GameObject playerGo;
-    
+    private float _distance;
+
+    private void Update()
+    {
+        Debug.Log($">>>>>> {Distance}");
+    }
+
     public PlayerController Player
     {
         get => _playerController;
@@ -29,6 +35,12 @@ public class GameManager : SingleTon<GameManager>
     {
         get => _score;
         set => _score = value;
+    }
+    
+    public float Distance
+    {
+        get => _distance;
+        set => _distance = value;
     }
 
     public float GameSpeed
@@ -48,6 +60,7 @@ public class GameManager : SingleTon<GameManager>
         _score = 0;
         _gameSpeed = 20;
         stageIndex = 0;
+        _distance = 0;
     }
     
     // 다음맵을 가져와서 생성하고 List로 저장 합니다.
@@ -60,7 +73,7 @@ public class GameManager : SingleTon<GameManager>
             Debug.Log($"게임끝!! 스코어는~!? {_score}");
             return;
         }
-        else if (stageIndex != 0)
+        else if (0 != stageIndex)
         {
             _objMaps[stageIndex-1].gameObject.SetActive(false);
         }

@@ -20,7 +20,7 @@ public class UILoby : MonoBehaviour
             ConfirmData data = new() { title = "아이디없음", body = "이런... 닉네임이 없어요 지금 만들러 가볼까요?" };
             PopupManager.Instance.ConfirmPopup(data,(() =>
             {
-                NicCheck();
+                NicCheck("닉네임 생성");
             }));
         }
         else
@@ -29,9 +29,9 @@ public class UILoby : MonoBehaviour
         }
     }
 
-    void NicCheck()
+    void NicCheck(string title)
     {
-        PopupManager.Instance.InputPopup("닉네임",(value) =>
+        PopupManager.Instance.InputPopup(title,(value) =>
         {
             PlayerPrefs.SetString(_nicNameKey, value);
             txtNicName.text = value;
@@ -51,7 +51,7 @@ public class UILoby : MonoBehaviour
             }), 
             (() =>
             {
-                NicCheck();
+                NicCheck("닉네임 변경");
             }),
             (() => Application.Quit()));
         }));

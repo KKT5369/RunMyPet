@@ -21,9 +21,10 @@ public class UIInputPopup : MonoBehaviour
 
     public void Addlistener(string title,Action<string> callback)
     {
+        this.title.text = title;
+        inputField.text = "";
         btnOkey.onClick.AddListener((() =>
         {
-            this.title.text = title;
             callback.Invoke(_inputValue);
         }));
         

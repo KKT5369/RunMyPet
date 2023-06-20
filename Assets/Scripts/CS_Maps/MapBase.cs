@@ -26,6 +26,7 @@ public class MapBase : MonoBehaviour
         speed = GameManager.Instance._gameSpeed;
         MoveMap(speed);
         MapSwitch();
+        GameManager.Instance.Distance += 0.02f;
         if (Input.GetKey(KeyCode.W))
         {
             GameManager.Instance._gameSpeed += 2;

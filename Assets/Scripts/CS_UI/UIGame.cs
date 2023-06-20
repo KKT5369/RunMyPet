@@ -12,6 +12,7 @@ public class UIGame : MonoBehaviour
     [SerializeField] private TMP_Text txtPurScore;
     [SerializeField] private TMP_Text txtDistance;
 
+    private int _distance;
 
     private void Awake()
     {
@@ -21,6 +22,13 @@ public class UIGame : MonoBehaviour
     private void Update()
     {
         txtPurScore.text = GameManager.Instance.Score.ToString();
+        
+    }
+
+    private void FixedUpdate()
+    {
+        _distance = (int)GameManager.Instance.Distance;
+        txtDistance.text = $"{_distance} M";
     }
 
     void SetAddListener()
