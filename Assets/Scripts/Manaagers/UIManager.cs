@@ -30,7 +30,8 @@ public class UIManager : SingleTon<UIManager>
             _uiGo.SetActive(false);
         }
     }
-
+    
+    // UI GameObject를 반환 해줍니다.
     public GameObject GetUI<T>()
     {
         if (UI.TryGetValue(typeof(T).Name, out _uiGo))
@@ -40,7 +41,8 @@ public class UIManager : SingleTon<UIManager>
 
         return null;
     }
-
+    
+    // 모든 UI를 삭제 합니다.
     public void ClearUI()
     {
         if (UI == null) return;

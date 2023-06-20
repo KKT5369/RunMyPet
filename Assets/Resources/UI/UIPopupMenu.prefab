@@ -236,12 +236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1124a9c59306c114883e46452c7e7d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnContinue: {fileID: 5397310874687747183}
-  btnRestart: {fileID: 5397310874169613247}
-  btnLobby: {fileID: 5397310873666116978}
+  btn1: {fileID: 5397310874687747183}
+  btn2: {fileID: 5397310874169613247}
+  btn3: {fileID: 5397310873666116978}
   btnClose: {fileID: 2877752282105569793}
-  firstBtnTxt: {fileID: 5397310872989038933}
-  twoBtnTxt: {fileID: 5397310874884867454}
+  btnTxt1: {fileID: 5397310872989038933}
+  btnTxt2: {fileID: 5397310874884867454}
+  btnTxt3: {fileID: 5397310874211331585}
 --- !u!1 &5397310872989038923
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +609,7 @@ GameObject:
   - component: {fileID: 5397310873666116979}
   - component: {fileID: 5397310873666116978}
   m_Layer: 5
-  m_Name: btnLobby
+  m_Name: btn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -730,7 +731,7 @@ GameObject:
   - component: {fileID: 5397310874169613240}
   - component: {fileID: 5397310874169613247}
   m_Layer: 5
-  m_Name: btnRestart
+  m_Name: btn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -988,7 +989,7 @@ GameObject:
   - component: {fileID: 5397310874687747176}
   - component: {fileID: 5397310874687747183}
   m_Layer: 5
-  m_Name: btnContinue
+  m_Name: btn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

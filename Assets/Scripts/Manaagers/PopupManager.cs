@@ -1,4 +1,6 @@
 using System;
+using JetBrains.Annotations;
+using UnityEngine;
 
 public class PopupManager : SingleTon<PopupManager>
 {
@@ -16,16 +18,23 @@ public class PopupManager : SingleTon<PopupManager>
         _UIconfirm.Init(data,callback);
     }
 
-    public void ButtonPopup(ButtonPopupData data,Action btn1 ,Action btn2,Action btn3)
+    public void ButtonPopup(ButtonPopupData data,[CanBeNull] Action btn1,[CanBeNull] Action btn2,[CanBeNull] Action btn3)
     {
-        if (_uiButtonPopup == null)
+        if (_uiButtonPopup == null) 
         {
-            UIManager.Instance.OpenUI<UIConfirm>();
+            UIManager.Instance.OpenUI<UIPopupMenu>();
             _uiButtonPopup = UIManager.Instance.GetUI<UIPopupMenu>().GetComponent<UIPopupMenu>();
         }
-        UIManager.Instance.OpenUI<UIConfirm>();
+        UIManager.Instance.OpenUI<UIPopupMenu>();
+        _uiButtonPopup.AddListener(data,btn1,btn2,btn3);
     }
     
+    public void CloseButtonPopupUI()
+    {
+        Time.timeScale = 1;
+        UIManager.Instance.CloseUI<UIPopupMenu>();
+    }
+
 }
 
 public class ButtonPopupData

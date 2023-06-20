@@ -28,7 +28,28 @@ public class UIGame : MonoBehaviour
         btnMenu.onClick.AddListener((() =>
         {
             Time.timeScale = 0;
-            UIManager.Instance.OpenUI<UIPopupMenu>();
+            ButtonPopupData data = new() { btnText1 = "계속하기", btnText2 = "다시하기", btnText3 = "로비로" };
+            PopupManager.Instance.ButtonPopup(data,
+                (() => 
+                {
+                    Time.timeScale = 1;
+                    UIManager.Instance.CloseUI<UIPopupMenu>();
+                    
+                }),
+                (() =>
+                {
+                    GameManager.Instance.Restart();
+                    PopupManager.Instance.CloseButtonPopupUI();
+                }),
+                (() =>
+                {
+                    ConfirmData data = new ConfirmData() { title = "로비로?", body = "진짜 로비로 가려고?" };
+                    PopupManager.Instance.ConfirmPopup(data, () =>
+                    {
+                        SceneLoadManager.Instance.LoadScene(SceneType.LobyScene);
+                    });
+                })
+            );
         }));
     }
 }

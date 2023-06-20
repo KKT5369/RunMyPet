@@ -10,7 +10,8 @@ public class UILoby : MonoBehaviour
     {
         btnMenu.onClick.AddListener((() =>
         {
-            UIManager.Instance.OpenUI<UIPopupMenu>();
+            ButtonPopupData data = new() { btnText1 = "캐릭터 선택", btnText2 = "테스트",btnText3 = "게임 종료"};
+            PopupManager.Instance.ButtonPopup(data,null,null,(() => Application.Quit()));
         }));
         btnTest.onClick.AddListener((() =>
         {
