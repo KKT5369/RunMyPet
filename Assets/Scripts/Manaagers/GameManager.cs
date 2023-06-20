@@ -21,11 +21,6 @@ public class GameManager : SingleTon<GameManager>
     private GameObject playerGo;
     private float _distance;
 
-    private void Update()
-    {
-        Debug.Log($">>>>>> {Distance}");
-    }
-
     public PlayerController Player
     {
         get => _playerController;
@@ -70,7 +65,13 @@ public class GameManager : SingleTon<GameManager>
         if (mapQue <= stageIndex)
         {
             Time.timeScale = 0;
-            Debug.Log($"게임끝!! 스코어는~!? {_score}");
+            RankData rankData = new()
+            {
+                nicName = PlayerPrefs.GetString("myNicName"),
+                score = _score,
+                disrance = (int)_distance,
+            };
+            DataManager.Instance.SetRankData(rankData);
             return;
         }
         else if (0 != stageIndex)
