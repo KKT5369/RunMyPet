@@ -3640,6 +3640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec12ab30973437049ae9a8935e84d246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  txtNicName: {fileID: 1561412932}
+  txtMaxScore: {fileID: 2015563821}
   btnMenu: {fileID: 591407894}
   btnTest: {fileID: 1177014540}
 --- !u!1 &1454671807
@@ -3840,7 +3842,7 @@ GameObject:
   - component: {fileID: 1561412932}
   - component: {fileID: 1561412931}
   m_Layer: 5
-  m_Name: txtDistance
+  m_Name: txtNicName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4345,7 +4347,7 @@ GameObject:
   - component: {fileID: 2015563821}
   - component: {fileID: 2015563820}
   m_Layer: 5
-  m_Name: txtPurScore
+  m_Name: txtMaxScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

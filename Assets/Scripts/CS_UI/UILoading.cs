@@ -26,13 +26,11 @@ public class UILoading : MonoBehaviour
         
         while (progressBar.fillAmount <= 0.85f)
         {
-            Debug.Log("로딩중...");
             progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount, 0.9f, timer);
             yield return null;
         }
         if (op.progress >= 0.8f)
         {
-            Debug.Log("로딩완료");
             progressBar.fillAmount = 1f;
             op.allowSceneActivation = true;
         }
