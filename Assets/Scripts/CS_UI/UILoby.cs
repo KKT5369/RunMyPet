@@ -8,7 +8,8 @@ public class UILoby : MonoBehaviour
     [SerializeField] private TMP_Text txtMaxScore;
     
     [SerializeField] private Button btnMenu;
-    [SerializeField] private Button btnTest;
+    [SerializeField] private Button btnStart;
+    [SerializeField] private Button btnRank;
 
     private readonly string _nicNameKey = "myNicName";
     
@@ -55,10 +56,11 @@ public class UILoby : MonoBehaviour
             }),
             (() => Application.Quit()));
         }));
-        btnTest.onClick.AddListener((() =>
+        btnStart.onClick.AddListener((() =>
         {
             ConfirmData confirmData = new() { title = "게임시작", body = $"{txtNicName.text} 님 달릴 준비가 됐나요?" };
             PopupManager.Instance.ConfirmPopup(confirmData,(() => SceneLoadManager.Instance.LoadScene(SceneType.GameScene)));
         }));
+        btnRank.onClick.AddListener((() => UIManager.Instance.OpenUI<UIRank>()));
     }
 }

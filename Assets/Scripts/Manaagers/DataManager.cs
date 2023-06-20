@@ -9,6 +9,7 @@ public class DataManager : SingleTon<DataManager>
     private string savePath => Application.persistentDataPath + "/saves/";
     private readonly string _saveFileName = "rankData.json";
     
+    // 랭크를 json 으로 저장하고 스코어 순으로 정렬 합니다.
     public void SetRankData(RankData myRankData)
     {
         if (!Directory.Exists(savePath))
@@ -36,6 +37,8 @@ public class DataManager : SingleTon<DataManager>
 
                     rankDatas[i].rank = i + 1;
                 }
+
+                rankDatas[0].rank = 1;
             }
             string saveJson = JsonUtility.ToJson(rankSaveData);
             File.WriteAllText(savePath + _saveFileName,saveJson);
@@ -82,4 +85,4 @@ public class RankData
     public int score;
     public int disrance;
     public int rank;
-} 
+}

@@ -12,7 +12,8 @@ public class GameManager : SingleTon<GameManager>
     private int _score;
     public float _gameSpeed;
     private PlayerController _playerController;
-    
+    public RankData rankData;
+
     [Header("맵 관련")]
     private List<GameObject> _mapPrefabs = new();
     private List<GameObject> _objMaps = new();
@@ -65,13 +66,14 @@ public class GameManager : SingleTon<GameManager>
         if (mapQue <= stageIndex)
         {
             Time.timeScale = 0;
-            RankData rankData = new()
+            rankData = new()
             {
                 nicName = PlayerPrefs.GetString("myNicName"),
                 score = _score,
                 disrance = (int)_distance,
             };
             DataManager.Instance.SetRankData(rankData);
+            UIManager.Instance.OpenUI<UIRank>();
             return;
         }
         else if (0 != stageIndex)
