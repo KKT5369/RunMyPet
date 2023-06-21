@@ -22,7 +22,7 @@ public partial class @PlayerAction: IInputActionCollection2, IDisposable
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""PlayerAction"",
-    ""floors"": [
+    ""maps"": [
         {
             ""name"": ""Player"",
             ""id"": ""896c4af2-ee63-4cd2-b956-6863f37ad07e"",
