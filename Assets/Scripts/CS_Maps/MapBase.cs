@@ -23,13 +23,13 @@ public class MapBase : MonoBehaviour
 
     private void Update()
     {
-        speed = GameManager.Instance._gameSpeed;
+        speed = GameManager.Instance.GameSpeed;
         MoveMap(speed);
         MapSwitch();
         GameManager.Instance.Distance += 0.02f;
         if (Input.GetKey(KeyCode.W))
         {
-            GameManager.Instance._gameSpeed += 2;
+            GameManager.Instance.GameSpeed += 2;
         }
     }
 

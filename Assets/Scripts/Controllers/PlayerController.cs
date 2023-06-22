@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,11 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
+    private void FixedUpdate()
+    {
+        transform.Translate(_vector2 * 10 * Time.fixedDeltaTime);
+    }
+
     public void OnJump(InputValue value)
     {
         if (_jumpIndex <= 2)
@@ -24,6 +30,11 @@ public class PlayerController : MonoBehaviour
             _rigidbody2D.AddForce(Vector2.up * (jumpPower * 200));
             _jumpIndex++;
         }
+    }
+
+    public void OnMove(InputValue value)
+    {
+        _vector2 = value.Get<Vector2>();
     }
 
     private void OnCollisionEnter2D(Collision2D col)

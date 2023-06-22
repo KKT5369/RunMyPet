@@ -10,7 +10,7 @@ public class GameManager : SingleTon<GameManager>
     public SceneType purScene;
     
     private int _score;
-    public float _gameSpeed;
+    private float _gameSpeed;
     private PlayerController _playerController;
     public RankData rankData;
 
@@ -42,7 +42,7 @@ public class GameManager : SingleTon<GameManager>
     public float GameSpeed
     {
         get => _gameSpeed;
-        private set => _gameSpeed = value;
+        set => _gameSpeed = value;
     }
 
 
@@ -54,7 +54,7 @@ public class GameManager : SingleTon<GameManager>
         _mapPrefabs = ResourcesLoadManager.Instance.LoadMap();
         mapQue = _mapPrefabs.Count;
         _score = 0;
-        _gameSpeed = 20;
+        _gameSpeed = 15;
         stageIndex = 0;
         _distance = 0;
     }

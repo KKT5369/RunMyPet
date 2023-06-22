@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CoinItem : MonoBehaviour,ItemBase
@@ -32,7 +33,7 @@ public class CoinItem : MonoBehaviour,ItemBase
     {
         GameManager.Instance.Score += score;
     }
-    
+
     // 트리거 발생시 Action 함수를 게임 매니저 에서 실해 해주고 게임오브젝트를 비활성화 합니다.
     private void OnTriggerEnter2D(Collider2D col)
     {

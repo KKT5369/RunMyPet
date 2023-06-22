@@ -21,10 +21,10 @@ public class SpeedItem : MonoBehaviour,ItemBase
 
     IEnumerator SpeedUp()
     {
-        _saveGameSpeed = GameManager.Instance._gameSpeed;
-        GameManager.Instance._gameSpeed = _saveGameSpeed * 5;
+        _saveGameSpeed = GameManager.Instance.GameSpeed;
+        GameManager.Instance.GameSpeed = _saveGameSpeed * 5;
         yield return new WaitForSeconds(2f);
-        GameManager.Instance._gameSpeed = _saveGameSpeed;
+        GameManager.Instance.GameSpeed = _saveGameSpeed;
     }
     
     private void OnTriggerEnter2D(Collider2D col)
