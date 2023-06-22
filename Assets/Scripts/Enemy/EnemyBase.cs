@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-    private Rigidbody2D _rig;
-    private BoxCollider2D _col;
-    private void Awake()
+    protected Rigidbody2D _rig;
+    protected BoxCollider2D _col;
+    
+    protected void Awake()
     {
         _rig = GetComponent<Rigidbody2D>();
         _col = GetComponent<BoxCollider2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    protected void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.layer.Equals(8))
         {
