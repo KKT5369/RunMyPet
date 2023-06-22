@@ -17,6 +17,7 @@ public class UILoby : MonoBehaviour
     
     private void Awake()
     {
+        SoundManager.Instance.BGMPlay("BGM");
         SetAddListener();
         if (!PlayerPrefs.HasKey(_nicNameKey))
         {
