@@ -66,15 +66,7 @@ public class GameManager : SingleTon<GameManager>
     {
         if (mapQue <= stageIndex)
         {
-            Time.timeScale = 0;
-            rankData = new()
-            {
-                nicName = PlayerPrefs.GetString("myNicName"),
-                score = _score,
-                disrance = (int)_distance,
-            };
-            DataManager.Instance.SetRankData(rankData);
-            UIManager.Instance.OpenUI<UIRank>();
+            EndGame();
             return;
         }
         else if (0 != stageIndex)
@@ -102,6 +94,13 @@ public class GameManager : SingleTon<GameManager>
     public void EndGame()
     {
         Time.timeScale = 0;
+        rankData = new()
+        {
+            nicName = PlayerPrefs.GetString("myNicName"),
+            score = _score,
+            disrance = (int)_distance,
+        };
+        DataManager.Instance.SetRankData(rankData);
         UIManager.Instance.OpenUI<UIRank>();
     }
     
