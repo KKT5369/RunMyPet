@@ -44,6 +44,8 @@ public class MapBase : MonoBehaviour
             floorPosx += 50;
             floors[i] = floor;
         }
+        floors[0].gameObject.SetActive(true);
+        floors[1].gameObject.SetActive(true);
 
         var finshObj = Resources.Load("EndPoint");
         var go = Instantiate(finshObj, floors[childCount - 1].transform) as GameObject;
