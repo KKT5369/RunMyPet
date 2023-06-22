@@ -3585,6 +3585,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8964508472125409546, guid: cd2f35815dda8064795794da410e4908,
+        type: 3}
+      propertyPath: m_text
+      value: "\uCD5C\uADFC \uC2A4\uCF54\uC5B4"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964508472778039371, guid: cd2f35815dda8064795794da410e4908,
+        type: 3}
+      propertyPath: m_text
+      value: '-'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964508472778039373, guid: cd2f35815dda8064795794da410e4908,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964508472778039373, guid: cd2f35815dda8064795794da410e4908,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964508473364084004, guid: cd2f35815dda8064795794da410e4908,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964508473364084004, guid: cd2f35815dda8064795794da410e4908,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8964508473809641416, guid: cd2f35815dda8064795794da410e4908,
         type: 3}
       propertyPath: m_Pivot.x

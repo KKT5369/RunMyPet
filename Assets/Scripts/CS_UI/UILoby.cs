@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class UILoby : MonoBehaviour
     [SerializeField] private Button btnMenu;
     [SerializeField] private Button btnStart;
     [SerializeField] private Button btnRank;
+    [SerializeField] private Button btnRankInit;
 
     private readonly string _nicNameKey = "myNicName";
     
@@ -40,6 +42,16 @@ public class UILoby : MonoBehaviour
         });
     }
 
+    public void SetScore()
+    {
+        txtMaxScore.text = GameManager.Instance.Score == 0 ?  "-" : Convert.ToString(GameManager.Instance.Score);
+    }
+
+    private void OnEnable()
+    {
+        SetScore();
+    }
+
     void SetAddListener()
     {
         btnMenu.onClick.AddListener((() =>
@@ -62,5 +74,6 @@ public class UILoby : MonoBehaviour
             PopupManager.Instance.ConfirmPopup(confirmData,(() => SceneLoadManager.Instance.LoadScene(SceneType.GameScene)));
         }));
         btnRank.onClick.AddListener((() => UIManager.Instance.OpenUI<UIRank>()));
+        btnRankInit.onClick.AddListener((() => DataManager.Instance.DeleteRank()));
     }
 }

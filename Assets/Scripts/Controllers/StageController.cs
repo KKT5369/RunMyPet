@@ -13,6 +13,7 @@ public class StageController : MonoBehaviour
 
     private void Init()
     {
+        Time.timeScale = 1;
         GameManager.Instance.SettingMap();
         GameManager.Instance.GetMap();
         UIManager.Instance.OpenUI<UIGame>();

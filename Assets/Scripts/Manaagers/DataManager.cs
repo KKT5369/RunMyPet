@@ -70,6 +70,15 @@ public class DataManager : SingleTon<DataManager>
 
         return rankSaveData;
     }
+
+    public void DeleteRank()
+    {
+        string path = savePath + _saveFileName;
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
+    }
 }
 
 [Serializable]
