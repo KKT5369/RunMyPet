@@ -29,7 +29,11 @@ public class MapBase : MonoBehaviour
         GameManager.Instance.Distance += 0.02f;
         if (Input.GetKey(KeyCode.W))
         {
-            GameManager.Instance.GameSpeed += 2;
+            GameManager.Instance.GameSpeed += 1;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            GameManager.Instance.GameSpeed -= 1;
         }
     }
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class GameManager : SingleTon<GameManager>
 {
@@ -54,7 +55,7 @@ public class GameManager : SingleTon<GameManager>
         _mapPrefabs = ResourcesLoadManager.Instance.LoadMap();
         mapQue = _mapPrefabs.Count;
         _score = 0;
-        _gameSpeed = 15;
+        _gameSpeed = 10;
         stageIndex = 0;
         _distance = 0;
     }
@@ -96,6 +97,12 @@ public class GameManager : SingleTon<GameManager>
         
         _objMaps.Clear();
         gameInit.Invoke();
+    }
+
+    public void EndGame()
+    {
+        Time.timeScale = 0;
+        UIManager.Instance.OpenUI<UIRank>();
     }
     
     // 출동한 아이템의 이펙트를 실행 합니다.
