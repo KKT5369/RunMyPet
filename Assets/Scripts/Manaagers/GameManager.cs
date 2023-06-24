@@ -55,7 +55,7 @@ public class GameManager : SingleTon<GameManager>
         _mapPrefabs = ResourcesLoadManager.Instance.LoadMap();
         mapQue = _mapPrefabs.Count;
         _score = 0;
-        _gameSpeed = 10;
+        _gameSpeed = 0;
         stageIndex = 0;
         _distance = 0;
     }
@@ -75,7 +75,6 @@ public class GameManager : SingleTon<GameManager>
         }
         _objMaps.Add(Instantiate(_mapPrefabs[stageIndex]));
         stageIndex++;
-        _gameSpeed += 2f;
     }
     
     // 씬의 플레이어와 맵을 삭제하고 다시 세팅 합니다.

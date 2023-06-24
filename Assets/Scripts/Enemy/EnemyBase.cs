@@ -17,8 +17,9 @@ public class EnemyBase : MonoBehaviour
     {
         if(col.gameObject.layer.Equals(8))
         {
-            Debug.Log(col.contacts[0].normal.x);
-            if (col.contacts[0].normal.x <= 0.5f)
+            Vector2 colPos = col.contacts[0].normal;
+            Debug.Log(colPos);
+            if (colPos.y <= -0.9f)
             {
                 StartCoroutine(nameof(Die));
             }
