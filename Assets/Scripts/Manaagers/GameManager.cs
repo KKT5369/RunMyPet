@@ -55,7 +55,7 @@ public class GameManager : SingleTon<GameManager>
         _mapPrefabs = ResourcesLoadManager.Instance.LoadMap();
         mapQue = _mapPrefabs.Count;
         _score = 0;
-        _gameSpeed = 0;
+        _gameSpeed = 20;
         stageIndex = 0;
         _distance = 0;
     }

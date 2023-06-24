@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2114320307442812027}
   - component: {fileID: 2114320307442812020}
   - component: {fileID: 2114320307442812024}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0076104403, y: 0.38273537}
+  m_Offset: {x: 0.014980674, y: 0.4228974}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2757235, y: 0.7562504}
+  m_Size: {x: 1.0297313, y: 0.57552123}
   m_EdgeRadius: 0
 --- !u!114 &2114320307442812024
 MonoBehaviour:

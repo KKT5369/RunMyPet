@@ -19,7 +19,7 @@ public class EnemyBase : MonoBehaviour
         {
             Vector2 colPos = col.contacts[0].normal;
             Debug.Log(colPos);
-            if (colPos.y <= -0.9f)
+            if (colPos.y <= -0.5f)
             {
                 StartCoroutine(nameof(Die));
             }

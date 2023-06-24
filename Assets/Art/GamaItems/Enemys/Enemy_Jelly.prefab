@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2897235903292490996}
   - component: {fileID: 2897235903292490995}
   - component: {fileID: 2897235903292491003}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Jelly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0167889, y: 0.5003137}
+  m_Offset: {x: -0.0042233467, y: 0.48565388}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.93806875, y: 0.868368}
+  m_Size: {x: 0.79565907, y: 0.8390484}
   m_EdgeRadius: 0
 --- !u!114 &2897235903292491003
 MonoBehaviour:

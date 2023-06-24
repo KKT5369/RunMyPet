@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRun",true);
             _jumpIndex = 0;
         }
+
+        if (LayerMask.NameToLayer("Enemy") == otherLayer)
+        {
+            _jumpIndex = 0;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
