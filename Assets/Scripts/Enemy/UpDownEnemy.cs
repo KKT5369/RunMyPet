@@ -17,6 +17,7 @@ public class UpDownEnemy : EnemyBase
 
     private void Update()
     {
+        if(isDie) return;
         if (movingUp)
         {
             _rig.velocity = new Vector2(_rig.velocity.x, moveSpeed);

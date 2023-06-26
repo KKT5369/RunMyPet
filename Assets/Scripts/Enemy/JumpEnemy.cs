@@ -15,6 +15,9 @@ public class JumpEnemy : EnemyBase
 
     private void Jump()
     {
-        _rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        if (!isDie)
+        {
+            _rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
     }
 }

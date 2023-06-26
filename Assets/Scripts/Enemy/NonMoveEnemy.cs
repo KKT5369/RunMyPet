@@ -5,5 +5,8 @@ using UnityEngine;
 
 public class NonMoveEnemy : EnemyBase
 {
-    
+    private void Start()
+    {
+        force = 3f;
+    }
 }

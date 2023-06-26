@@ -30,6 +30,10 @@ public class MapBase : MonoBehaviour
         {
             GameManager.Instance.GameSpeed -= 1;
         }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            GameManager.Instance.GameSpeed = 0f;
+        }
     }
 
     protected void SetMaps()

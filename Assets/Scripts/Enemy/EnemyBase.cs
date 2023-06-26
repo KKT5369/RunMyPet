@@ -6,6 +6,8 @@ public class EnemyBase : MonoBehaviour
 {
     protected Rigidbody2D _rig;
     protected BoxCollider2D _col;
+    protected float force = 5;
+    protected bool isDie;
     
     protected void Awake()
     {
@@ -32,10 +34,12 @@ public class EnemyBase : MonoBehaviour
 
     IEnumerator Die()
     {
-        _rig.AddForce(Vector2.up * (2 * 500));
-        yield return new WaitForSeconds(0.5f);
+        if (isDie) yield break;
+        isDie = true;
+        _rig.AddForce(Vector2.up * (force * 500));
+        yield return new WaitForSeconds(0.3f);
         _col.isTrigger = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         gameObject.SetActive(false);
     }
 }

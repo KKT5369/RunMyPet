@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         transform.Translate(_vector2 * 10 * Time.fixedDeltaTime);
+
+        
     }
 
     public void OnJump(InputValue value)
