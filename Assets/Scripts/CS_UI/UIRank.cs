@@ -34,14 +34,20 @@ public class UIRank : MonoBehaviour
 
     void SetAddListener()
     {
-        btnClose.onClick.AddListener((() => UIManager.Instance.CloseUI<UIRank>()));
+        btnClose.onClick.AddListener((() =>
+        {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
+            UIManager.Instance.CloseUI<UIRank>();
+        }));
         btnReStart.onClick.AddListener((() =>
         {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
             GameManager.Instance.Restart();
             UIManager.Instance.CloseUI<UIRank>();
         }));
         btnGoLobby.onClick.AddListener((() =>
         {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
             ConfirmData data = new ConfirmData() { title = "로비로?", body = "진짜 로비로 가려고?" };
             PopupManager.Instance.ConfirmPopup(data, () =>
             {

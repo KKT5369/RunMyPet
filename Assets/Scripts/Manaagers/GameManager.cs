@@ -92,6 +92,7 @@ public class GameManager : SingleTon<GameManager>
 
     public void EndGame()
     {
+        SoundManager.Instance.PlayUISound(SoundType.Clear);
         Time.timeScale = 0;
         rankData = new()
         {

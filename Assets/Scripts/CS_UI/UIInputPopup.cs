@@ -25,9 +25,14 @@ public class UIInputPopup : MonoBehaviour
         inputField.text = "";
         btnOkey.onClick.AddListener((() =>
         {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
             callback.Invoke(_inputValue);
         }));
         
-        btnCancel.onClick.AddListener((() => UIManager.Instance.CloseUI<UIInputPopup>()));
+        btnCancel.onClick.AddListener((() =>
+        {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
+            UIManager.Instance.CloseUI<UIInputPopup>();
+        }));
     }
 }

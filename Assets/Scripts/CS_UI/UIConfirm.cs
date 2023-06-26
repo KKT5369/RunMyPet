@@ -28,10 +28,15 @@ public class UIConfirm : MonoBehaviour
     {
         btnOkey.onClick.AddListener((() =>
         {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
             UIManager.Instance.CloseUI<UIConfirm>();
             okeyCallback.Invoke();
         }));
-        btnCancel.onClick.AddListener((() => UIManager.Instance.CloseUI<UIConfirm>()));
+        btnCancel.onClick.AddListener((() =>
+        {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
+            UIManager.Instance.CloseUI<UIConfirm>();
+        }));
     }
 
 }

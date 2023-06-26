@@ -21,6 +21,7 @@ public class EnemyBase : MonoBehaviour
             Debug.Log(colPos);
             if (colPos.y <= -0.5f)
             {
+                SoundManager.Instance.PlayEffect(SoundType.Grow);
                 StartCoroutine(nameof(Die));
             }
             else

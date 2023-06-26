@@ -26,13 +26,26 @@ public class UIPopupMenu : MonoBehaviour
         btnTxt2.text = data.btnText2;
         btnTxt3.text = data.btnText3;
 
-        this.btn1.onClick.AddListener((() => btn1?.Invoke()));
-        this.btn2.onClick.AddListener((() => btn2?.Invoke()));
-        this.btn3.onClick.AddListener((() => btn3?.Invoke()));
+        this.btn1.onClick.AddListener((() =>
+        {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
+            btn1?.Invoke();
+        }));
+        this.btn2.onClick.AddListener((() =>
+        {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
+            btn2?.Invoke();
+        }));
+        this.btn3.onClick.AddListener((() =>
+        {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
+            btn3?.Invoke();
+        }));
     }
 
     void CloseUI()
     {
+        SoundManager.Instance.PlayUISound(SoundType.Button);
         Time.timeScale = 1;
         UIManager.Instance.CloseUI<UIPopupMenu>();
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -64,8 +65,9 @@ public class SoundManager : SingleTon<SoundManager>
 
     }
 
-    public void BGMPlay(string clipName,float bgVolume = 1f)
+    public void PlayBGM(SoundType soundType,float bgVolume = 1f)
     {
+        string clipName = soundType.ToString();
         AudioClip clip;
         if (!soundClips.TryGetValue(clipName, out clip)) return;
 
@@ -77,8 +79,23 @@ public class SoundManager : SingleTon<SoundManager>
         BgAudioSource.Play();
     }
 
-    public void EffectPlay(string clipName)
+    public void PlayUISound(SoundType soundType)
     {
+        string clipName = soundType.ToString();
+        AudioClip audioClip;
+        if (!soundClips.TryGetValue(clipName,out audioClip)) return;
+        AudioSource audioSource;
+
+        GameObject go = new GameObject(clipName);
+        audioSource = go.AddComponent<AudioSource>();
+        audioSource.clip = audioClip;
+        audioSource.Play();
+        Destroy(go,audioSource.clip.length);
+    }
+
+    public void PlayEffect(SoundType soundType)
+    {
+        string clipName = soundType.ToString();
         Transform clipBoxTransform = _effectSoundBox.transform.Find(clipName);
         AudioClip audioClip;
         if (!soundClips.TryGetValue(clipName,out audioClip)) return;

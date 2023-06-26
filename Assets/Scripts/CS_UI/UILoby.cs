@@ -17,7 +17,7 @@ public class UILoby : MonoBehaviour
     
     private void Awake()
     {
-        SoundManager.Instance.BGMPlay("BGM");
+        SoundManager.Instance.PlayBGM(SoundType.BGM);
         SetAddListener();
         if (!PlayerPrefs.HasKey(_nicNameKey))
         {
@@ -57,6 +57,7 @@ public class UILoby : MonoBehaviour
     {
         btnMenu.onClick.AddListener((() =>
         {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
             ButtonPopupData data = new() { btnText1 = "캐릭터 선택", btnText2 = "닉네임 변경",btnText3 = "게임 종료"};
             PopupManager.Instance.ButtonPopup(data,
             (() =>
@@ -71,10 +72,15 @@ public class UILoby : MonoBehaviour
         }));
         btnStart.onClick.AddListener((() =>
         {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
             ConfirmData confirmData = new() { title = "게임시작", body = $"{txtNicName.text} 님 달릴 준비가 됐나요?" };
             PopupManager.Instance.ConfirmPopup(confirmData,(() => SceneLoadManager.Instance.LoadScene(SceneType.GameScene)));
         }));
-        btnRank.onClick.AddListener((() => UIManager.Instance.OpenUI<UIRank>()));
+        btnRank.onClick.AddListener((() =>
+        {
+            SoundManager.Instance.PlayUISound(SoundType.Button);
+            UIManager.Instance.OpenUI<UIRank>();
+        }));
         btnRankInit.onClick.AddListener((() => DataManager.Instance.DeleteRank()));
     }
 }
