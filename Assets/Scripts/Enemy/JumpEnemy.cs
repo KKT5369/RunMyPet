@@ -5,11 +5,12 @@ using UnityEngine;
 public class JumpEnemy : EnemyBase
 {
     public float jumpForce = 20f;
-    public float jumpInterval = 2f;
+    private float jumpInterval = 2f;
 
     private void Start()
     {
-        InvokeRepeating("Jump", jumpInterval, jumpInterval);
+        jumpInterval = Random.Range(1f, 3f);
+        InvokeRepeating("Jump", jumpInterval, 2);
     }
 
     private void Jump()

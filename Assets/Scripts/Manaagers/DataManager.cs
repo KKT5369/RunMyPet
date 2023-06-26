@@ -42,7 +42,6 @@ public class DataManager : SingleTon<DataManager>
             }
             string saveJson = JsonUtility.ToJson(rankSaveData);
             File.WriteAllText(savePath + _saveFileName,saveJson);
-            Debug.Log(saveJson);
         }
         else
         {
