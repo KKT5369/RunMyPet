@@ -38,7 +38,7 @@ public class CoinItem : MonoBehaviour,ItemBase
     private void OnTriggerEnter2D(Collider2D col)
     {
         GameManager.Instance.ItemAction(this);
-        SoundManager.Instance.EffectPlay("Grow");
+        SoundManager.Instance.EffectPlay("Sell");
         gameObject.SetActive(false);
     }
 }

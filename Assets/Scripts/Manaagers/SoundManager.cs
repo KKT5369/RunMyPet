@@ -94,6 +94,7 @@ public class SoundManager : SingleTon<SoundManager>
                 {
                     sound.SetActive(true);
                     StartCoroutine(EffectSoundClose(sound.GetComponent<AudioSource>()));
+                    return;
                 }
             }
             var goSound = new GameObject(clipName);
