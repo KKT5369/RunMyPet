@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -15,7 +16,8 @@ public class SoundManager : SingleTon<SoundManager>
 
 
     private GameObject _goBGM;
-    private Dictionary<string, GameObject> _effectSounds;
+    private List<GameObject> _effectSounds;
+    private GameObject _effectSoundBox;
     private AudioSource _bgAudioSource;
     
     GameObject GOBgSound
@@ -52,12 +54,14 @@ public class SoundManager : SingleTon<SoundManager>
 
     public void Init()
     {
+        _effectSoundBox = new GameObject("EffectSoundBox");
         AudioClip[] _audioClips = Resources.LoadAll<AudioClip>("Audio");
         
         foreach (var v in _audioClips)
         {
             soundClips.Add(v.name,v);
         }
+
     }
 
     public void BGMPlay(string clipName,float bgVolume = 1f)
@@ -75,12 +79,52 @@ public class SoundManager : SingleTon<SoundManager>
 
     public void EffectPlay(string clipName)
     {
-        GameObject effectgo;
-        _effectSounds.TryGetValue(clipName, out effectgo);
+        Transform clipBoxTransform = _effectSoundBox.transform.Find(clipName);
+        AudioClip audioClip;
+        if (!soundClips.TryGetValue(clipName,out audioClip)) return;
+        GameObject clipSoundBox;
+        AudioSource audioSource;
         
-        AudioClip clip;
-        if (!soundClips.TryGetValue(clipName, out clip)) return;
-        
-        
+        if (clipBoxTransform != null)
+        {
+            for (int i = 0; i < clipBoxTransform.childCount; i++)
+            {
+                var sound = clipBoxTransform.GetChild(i).gameObject;
+                if(!sound.activeInHierarchy)
+                {
+                    sound.SetActive(true);
+                    StartCoroutine(EffectSoundClose(sound.GetComponent<AudioSource>()));
+                }
+            }
+            var goSound = new GameObject(clipName);
+            audioSource = goSound.AddComponent<AudioSource>();
+            audioSource.clip = audioClip;
+            audioSource.Play();
+            goSound.transform.parent = clipBoxTransform.transform;
+            StartCoroutine(EffectSoundClose(audioSource));
+        }
+        else
+        {
+            clipSoundBox = new GameObject(clipName);
+            clipSoundBox.name = clipName;
+            clipSoundBox.transform.parent = _effectSoundBox.transform;
+
+            var goSound = new GameObject(clipName);
+            audioSource = goSound.AddComponent<AudioSource>();
+            audioSource.clip = audioClip;
+            audioSource.Play();
+            goSound.transform.parent = clipSoundBox.transform;
+            StartCoroutine(EffectSoundClose(audioSource));
+        }
     }
+
+    IEnumerator EffectSoundClose(AudioSource audioSource)
+    {
+        while (audioSource.isPlaying)
+        {
+            yield return null;
+        }
+        audioSource.gameObject.SetActive(false);
+    }
+
 }
