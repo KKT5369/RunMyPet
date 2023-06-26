@@ -99,41 +99,32 @@ public class SoundManager : SingleTon<SoundManager>
         Transform clipBoxTransform = _effectSoundBox.transform.Find(clipName);
         AudioClip audioClip;
         if (!soundClips.TryGetValue(clipName,out audioClip)) return;
-        GameObject clipSoundBox;
         AudioSource audioSource;
-        
-        if (clipBoxTransform != null)
-        {
-            for (int i = 0; i < clipBoxTransform.childCount; i++)
-            {
-                var sound = clipBoxTransform.GetChild(i).gameObject;
-                if(!sound.activeInHierarchy)
-                {
-                    sound.SetActive(true);
-                    StartCoroutine(EffectSoundClose(sound.GetComponent<AudioSource>()));
-                    return;
-                }
-            }
-            var goSound = new GameObject(clipName);
-            audioSource = goSound.AddComponent<AudioSource>();
-            audioSource.clip = audioClip;
-            audioSource.Play();
-            goSound.transform.parent = clipBoxTransform.transform;
-            StartCoroutine(EffectSoundClose(audioSource));
-        }
-        else
-        {
-            clipSoundBox = new GameObject(clipName);
-            clipSoundBox.name = clipName;
-            clipSoundBox.transform.parent = _effectSoundBox.transform;
 
-            var goSound = new GameObject(clipName);
-            audioSource = goSound.AddComponent<AudioSource>();
-            audioSource.clip = audioClip;
-            audioSource.Play();
-            goSound.transform.parent = clipSoundBox.transform;
-            StartCoroutine(EffectSoundClose(audioSource));
+        if (clipBoxTransform == null)
+        {
+            var clipSoundBox = new GameObject(clipName);
+            clipSoundBox.name = clipName;
+            clipBoxTransform = clipSoundBox.transform;
+            clipSoundBox.transform.parent = _effectSoundBox.transform;
         }
+        
+        for (int i = 0; i < clipBoxTransform.childCount; i++)
+        {
+            var sound = clipBoxTransform.GetChild(i).gameObject;
+            if(!sound.activeInHierarchy)
+            {
+                sound.SetActive(true);
+                StartCoroutine(EffectSoundClose(sound.GetComponent<AudioSource>()));
+                return;
+            }
+        }
+        var goSound = new GameObject(clipName);
+        audioSource = goSound.AddComponent<AudioSource>();
+        audioSource.clip = audioClip;
+        audioSource.Play();
+        goSound.transform.parent = clipBoxTransform;
+        StartCoroutine(EffectSoundClose(audioSource));
     }
 
     IEnumerator EffectSoundClose(AudioSource audioSource)
