@@ -22,6 +22,7 @@ public class MapBase : MonoBehaviour
         MoveMap(speed);
         MapSwitch();
         GameManager.Instance.Distance += 0.02f;
+#if UNITY_EDITOR
         if (Input.GetKey(KeyCode.W))
         {
             GameManager.Instance.GameSpeed += 1;
@@ -34,6 +35,8 @@ public class MapBase : MonoBehaviour
         {
             GameManager.Instance.GameSpeed = 0f;
         }
+        
+#endif
     }
 
     protected void SetMaps()

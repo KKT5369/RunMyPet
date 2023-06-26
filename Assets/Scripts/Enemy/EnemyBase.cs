@@ -27,7 +27,7 @@ public class EnemyBase : MonoBehaviour
             }
             else
             {
-                //GameManager.Instance.EndGame();
+                GameManager.Instance.EndGame();
             }
         }
     }

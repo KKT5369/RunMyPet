@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+    #if UNITY_EDITOR
         transform.Translate(_vector2 * 10 * Time.fixedDeltaTime);
+    #endif
 
         
     }

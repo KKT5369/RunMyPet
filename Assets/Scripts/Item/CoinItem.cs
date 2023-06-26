@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Common;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -40,6 +41,6 @@ public class CoinItem : MonoBehaviour,ItemBase
     {
         GameManager.Instance.ItemAction(this);
         SoundManager.Instance.PlayEffect(SoundType.Sell,SoundVolume.coinEffect);
-        gameObject.SetActive(false);
+        transform.DOMove(col.transform.position, 0.2f).OnComplete((() => gameObject.SetActive(false)));
     }
 }
