@@ -14,7 +14,7 @@ public class GameManager : SingleTon<GameManager>
     private float _gameSpeed;
     private PlayerController _playerController;
     public RankData rankData;
-
+    
     [Header("맵 관련")]
     private List<GameObject> _mapPrefabs = new();
     private List<GameObject> _objMaps = new();
@@ -22,6 +22,7 @@ public class GameManager : SingleTon<GameManager>
     private int mapQue;
     private GameObject playerGo;
     private float _distance;
+    public bool isFever = false; 
 
     public PlayerController Player
     {
