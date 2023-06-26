@@ -93,7 +93,7 @@ public class SoundManager : SingleTon<SoundManager>
         Destroy(go,audioSource.clip.length);
     }
 
-    public void PlayEffect(SoundType soundType)
+    public void PlayEffect(SoundType soundType,float volume = 1f)
     {
         string clipName = soundType.ToString();
         Transform clipBoxTransform = _effectSoundBox.transform.Find(clipName);
@@ -122,6 +122,7 @@ public class SoundManager : SingleTon<SoundManager>
         var goSound = new GameObject(clipName);
         audioSource = goSound.AddComponent<AudioSource>();
         audioSource.clip = audioClip;
+        audioSource.volume = volume;
         audioSource.Play();
         goSound.transform.parent = clipBoxTransform;
         StartCoroutine(EffectSoundClose(audioSource));

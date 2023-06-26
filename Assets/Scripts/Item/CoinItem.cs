@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Common;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -38,7 +39,7 @@ public class CoinItem : MonoBehaviour,ItemBase
     private void OnTriggerEnter2D(Collider2D col)
     {
         GameManager.Instance.ItemAction(this);
-        SoundManager.Instance.PlayEffect(SoundType.Sell);
+        SoundManager.Instance.PlayEffect(SoundType.Sell,SoundVolume.coinEffect);
         gameObject.SetActive(false);
     }
 }
