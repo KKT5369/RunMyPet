@@ -22,7 +22,7 @@ public class GameRankItem : MonoBehaviour
     {
         txtRankNum.text = Convert.ToString(data.rank);
         txtNicName.text = data.nicName;
-        txtScore.text = Convert.ToString(data.score);
+        txtScore.text = Convert.ToString($"{data.score} 점");
         txtDistance.text = Convert.ToString($"{data.disrance} M");
     }
 }

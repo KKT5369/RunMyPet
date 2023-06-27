@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 using Random = System.Random;
 
@@ -9,22 +7,24 @@ public class GameItem : MonoBehaviour,ItemBase
 { 
     private ItemType itemType;
     private Array _itemTypes;
-    private float _itemTime = 5f;
+    private float _itemTime = 3f;
     private float _saveGameSpeed;
     private Random _random = new();
-
-    
-    
+    private UIGame _uiGame;
     
     private void Awake()
     {
-        _itemTypes = Enum.GetValues(typeof(ItemType));
+          _itemTypes = Enum.GetValues(typeof(ItemType));
         itemType = (ItemType)_itemTypes.GetValue(_random.Next(_itemTypes.Length));
+    }
+
+    private void Start()
+    {
+        _uiGame = UIManager.Instance.GetUI<UIGame>().GetComponent<UIGame>();
     }
 
     public void Action()
     {
-        Debug.Log($"{itemType.ToString()} 아이템");
         switch (itemType)
         {
             case ItemType.SpeedItem:
@@ -38,17 +38,26 @@ public class GameItem : MonoBehaviour,ItemBase
 
     IEnumerator OnMagnet()
     {
+        _uiGame.ActiveBuff(itemType,true);
         ItemManager.Instance.isOnMagnet = true;
         yield return new WaitForSeconds(_itemTime);
+        _uiGame.Fade(itemType);
+        yield return new WaitForSeconds(2f);
+        _uiGame.ActiveBuff(itemType,false);
         ItemManager.Instance.isOnMagnet = false;
+        
     }
 
     IEnumerator SpeedUp()
     {
+        _uiGame.ActiveBuff(itemType,true);
         ItemManager.Instance.isSpeedup = true;
         _saveGameSpeed = GameManager.Instance.GameSpeed;
-        GameManager.Instance.GameSpeed = _saveGameSpeed * 5;
+        GameManager.Instance.GameSpeed = _saveGameSpeed * 2;
         yield return new WaitForSeconds(_itemTime);
+        _uiGame.Fade(itemType);
+        yield return new WaitForSeconds(3f);
+        _uiGame.ActiveBuff(itemType,false);
         GameManager.Instance.GameSpeed = _saveGameSpeed;
         ItemManager.Instance.isSpeedup = false;
     }

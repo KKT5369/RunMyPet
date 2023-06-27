@@ -29,7 +29,6 @@ public class ItemManager : SingleTon<ItemManager>
             case ItemType.SpeedItem:
                 if (isCorSpeedUp != null)
                 {
-                    Debug.Log($"스피드 코루틴 정지");
                     GameManager.Instance.GameSpeed = 15f;
                     StopCoroutine(isCorSpeedUp);
                 }
@@ -38,7 +37,6 @@ public class ItemManager : SingleTon<ItemManager>
             case ItemType.MagnetItem:
                 if (isCorMagnet != null)
                 {
-                    Debug.Log($"자석 코루틴 정지");
                     StopCoroutine(isCorMagnet);
                 }
                 isCorMagnet = StartCoroutine(coroutine);

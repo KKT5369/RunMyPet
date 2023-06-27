@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,18 +12,22 @@ public class UIGame : MonoBehaviour
     [SerializeField] private Button btnMenu;
     [SerializeField] private TMP_Text txtPurScore;
     [SerializeField] private TMP_Text txtDistance;
+    [SerializeField] private List<GameObject> buffPos;
 
     private int _distance;
-
+    private Color _color;
+    private Tween[] isBuff;
+    
     private void Awake()
     {
+        _color = buffPos[0].GetComponent<Image>().color;
+        isBuff = new Tween[buffPos.Count];
         SetAddListener();
     }
 
     private void Update()
     {
         txtPurScore.text = GameManager.Instance.Score.ToString();
-        
     }
 
     private void FixedUpdate()
@@ -31,6 +36,23 @@ public class UIGame : MonoBehaviour
         txtDistance.text = $"{_distance} M";
     }
 
+    public void ActiveBuff(ItemType itemType,bool value)
+    {
+        int i = (int)itemType;
+        if (isBuff[i] != null)
+        {
+            isBuff[i].Kill();
+        }
+        
+        var go = buffPos[i];
+        go.GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        go.SetActive(value);
+    }
+
+    public void Fade(ItemType itemType)
+    {
+        isBuff[(int)itemType] = buffPos[(int)itemType].GetComponent<Image>().DOFade(0, 3).SetLoops(-1, LoopType.Yoyo);
+    }
     void SetAddListener()
     {
         btnMenu.onClick.AddListener((() =>
