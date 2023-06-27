@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class CoinItem : MonoBehaviour,ItemBase
 {
-    [SerializeField] private ItemType itemType;
+    [SerializeField] private CoinTyep coinTyep;
     readonly int _bronzeCoinScore = 10;
     readonly int _silverCoinScore = 20;
     readonly int _goldCoinScore = 30;
@@ -21,15 +21,15 @@ public class CoinItem : MonoBehaviour,ItemBase
     // ItemBase 인터페이스를 상속 받았으므로 해당 아이템의 이펙트를 작성 합니다.
     public void Action()
     {
-        switch (itemType)
+        switch (coinTyep)
         {
-            case ItemType.BronzeCoin:
+            case CoinTyep.BronzeCoin:
                 AddCoin(_bronzeCoinScore);
                 break;
-            case ItemType.SilverCoin:
+            case CoinTyep.SilverCoin:
                 AddCoin(_silverCoinScore);
                 break;
-            case ItemType.GoldCoin:
+            case CoinTyep.GoldCoin:
                 AddCoin(_goldCoinScore);
                 break;
         }

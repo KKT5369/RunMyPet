@@ -1,11 +1,15 @@
 ﻿
 public enum ItemType
 {
+    SpeedItem,
+    MagnetItem,
+}
+
+public enum CoinTyep
+{
     BronzeCoin,
     SilverCoin,
     GoldCoin,
-    SpeedItem,
-    MagnetItem,
 }
 
 public enum SceneType

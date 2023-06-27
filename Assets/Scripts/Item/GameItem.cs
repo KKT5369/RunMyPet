@@ -6,11 +6,18 @@ using UnityEngine;
 using Random = System.Random;
 
 public class GameItem : MonoBehaviour,ItemBase
-{
-    [SerializeField] private ItemType itemType;
+{ 
+    private ItemType itemType;
+    private Array _itemTypes;
     private float _itemTime = 10f;
-    
     private float _saveGameSpeed;
+    private Random _random = new();
+    
+    private void Awake()
+    {
+        _itemTypes = Enum.GetValues(typeof(ItemType));
+        itemType = (ItemType)_itemTypes.GetValue(_random.Next(_itemTypes.Length));
+    }
 
     public void Action()
     {
