@@ -5,6 +5,7 @@ public enum ItemType
     SilverCoin,
     GoldCoin,
     SpeedItem,
+    MagnetItem,
 }
 
 public enum SceneType

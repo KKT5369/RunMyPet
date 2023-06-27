@@ -8,6 +8,7 @@ using UnityEngine.Tilemaps;
 public class GameManager : SingleTon<GameManager>
 {
     public Action gameInit;
+    public bool isOnMagnet;
     public SceneType purScene;
     
     private int _score;
@@ -22,7 +23,7 @@ public class GameManager : SingleTon<GameManager>
     private int mapQue;
     private GameObject playerGo;
     private float _distance;
-    public bool isFever = false; 
+    
 
     public PlayerController Player
     {
