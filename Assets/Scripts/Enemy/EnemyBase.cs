@@ -20,7 +20,7 @@ public class EnemyBase : MonoBehaviour
         if(col.gameObject.layer.Equals(8))
         {
             Vector2 colPos = col.contacts[0].normal;
-            if (colPos.y <= -0.5f)
+            if (ItemManager.Instance.isSpeedup || colPos.y <= -0.5f)
             {
                 SoundManager.Instance.PlayEffect(SoundType.Grow);
                 StartCoroutine(nameof(Die));

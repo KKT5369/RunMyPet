@@ -8,7 +8,6 @@ using UnityEngine.Tilemaps;
 public class GameManager : SingleTon<GameManager>
 {
     public Action gameInit;
-    public bool isOnMagnet;
     public SceneType purScene;
     
     private int _score;
@@ -106,17 +105,5 @@ public class GameManager : SingleTon<GameManager>
         UIManager.Instance.OpenUI<UIRank>();
     }
     
-    // 출동한 아이템의 이펙트를 실행 합니다.
-    public void ItemAction(ItemBase itembase)
-    {
-        itembase.Action();
-    }
     
-    // 코루틴을 실행 해줍니다.
-    public void OnStartCoroutine(IEnumerator coroutine)
-    {
-        StartCoroutine(coroutine);
-    }
 }
-
-

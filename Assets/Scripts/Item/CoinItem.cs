@@ -37,7 +37,7 @@ public class CoinItem : MonoBehaviour,ItemBase
 
     private void FixedUpdate()
     {
-        if (GameManager.Instance.isOnMagnet)
+        if (ItemManager.Instance.isOnMagnet)
         {
             _collider2D.radius = 4f;
         }
@@ -47,13 +47,6 @@ public class CoinItem : MonoBehaviour,ItemBase
         }
     }
 
-    IEnumerator OnMagnet()
-    {
-        _collider2D.radius = 4f;
-        yield return new WaitForSeconds(10);
-        _collider2D.radius = 0.3f;
-    }
-    
     // 스코어를 게임매니져에 저장 합니다.
     void AddCoin(int score)
     {
@@ -65,7 +58,7 @@ public class CoinItem : MonoBehaviour,ItemBase
     {
         if (LayerMask.NameToLayer("Player") == col.gameObject.layer)
         {
-            GameManager.Instance.ItemAction(this);
+            ItemManager.Instance.ItemAction(this);
             SoundManager.Instance.PlayEffect(SoundType.Sell,SoundVolume.coinEffect);
             transform.DOMove(col.transform.position, 0.1f).OnComplete((() => gameObject.SetActive(false)));    
         }
