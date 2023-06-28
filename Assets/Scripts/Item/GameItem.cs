@@ -7,7 +7,7 @@ public class GameItem : MonoBehaviour,ItemBase
 { 
     private ItemType itemType;
     private Array _itemTypes;
-    private float _itemTime = 3f;
+    private float _itemTime = 10f;
     private float _saveGameSpeed;
     private Random _random = new();
     private UIGame _uiGame;
@@ -35,19 +35,21 @@ public class GameItem : MonoBehaviour,ItemBase
                 break;
         }
     }
-
+    
+    // 자석 아이템 효과
     IEnumerator OnMagnet()
     {
         _uiGame.ActiveBuff(itemType,true);
         ItemManager.Instance.isOnMagnet = true;
         yield return new WaitForSeconds(_itemTime);
         _uiGame.Fade(itemType);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         _uiGame.ActiveBuff(itemType,false);
         ItemManager.Instance.isOnMagnet = false;
         
     }
-
+    
+    // 스피드 아이템 효과
     IEnumerator SpeedUp()
     {
         _uiGame.ActiveBuff(itemType,true);
