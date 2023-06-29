@@ -89,6 +89,7 @@ public class UIGame : MonoBehaviour
                     ConfirmData data = new ConfirmData() { title = "로비로?", body = "진짜 로비로 가려고?" };
                     PopupManager.Instance.ConfirmPopup(data, () =>
                     {
+                        ItemManager.Instance.AllStopCoroutine();
                         SceneLoadManager.Instance.LoadScene(SceneType.LobyScene);
                     });
                 })

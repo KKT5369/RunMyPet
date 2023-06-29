@@ -8,7 +8,7 @@ public class ItemManager : SingleTon<ItemManager>
 {
     public bool isSpeedup;
     public bool isOnMagnet;
-
+    
     private Coroutine isCorSpeedUp;
     private Coroutine isCorMagnet;
     
