@@ -7,13 +7,13 @@ public class PopupManager : SingleTon<PopupManager>
     private UIConfirm _UIconfirm;
     private UIPopupMenu _uiButtonPopup;
     private UIInputPopup _uiInputPopup;
-    
+
     /// <summary>
     /// data >> 타이틀과 내용 정보
     /// </summary>
     /// <param name="data"></param>
     /// <param name="callback"></param>
-    public void ConfirmPopup(ConfirmData data, Action callback)
+    public void ConfirmPopup(ConfirmData data, Action OkeyCallback = null,Action noCallback = null)
     {
         if (_UIconfirm == null)
         {
@@ -21,7 +21,7 @@ public class PopupManager : SingleTon<PopupManager>
             _UIconfirm = UIManager.Instance.GetUI<UIConfirm>().GetComponent<UIConfirm>();
         }
         UIManager.Instance.OpenUI<UIConfirm>();
-        _UIconfirm.Init(data,callback);
+        _UIconfirm.Init(data,OkeyCallback,noCallback);
     }
     
     /// <summary>
@@ -49,7 +49,7 @@ public class PopupManager : SingleTon<PopupManager>
         UIManager.Instance.CloseUI<UIPopupMenu>();
     }
 
-    public void InputPopup(string title, Action<string> callback)
+    public void InputPopup(string title, Action<string> okeyCallback,Action noCallback = null)
     {
         if (_uiInputPopup == null) 
         {
@@ -57,7 +57,7 @@ public class PopupManager : SingleTon<PopupManager>
             _uiInputPopup = UIManager.Instance.GetUI<UIInputPopup>().GetComponent<UIInputPopup>();
         }
         UIManager.Instance.OpenUI<UIInputPopup>();
-        _uiInputPopup.Addlistener(title,callback);
+        _uiInputPopup.Addlistener(title,okeyCallback);
     }
     
     

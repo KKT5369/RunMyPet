@@ -19,18 +19,19 @@ public class UIInputPopup : MonoBehaviour
         inputField.onEndEdit.AddListener((value) => _inputValue = value);
     }
 
-    public void Addlistener(string title,Action<string> callback)
+    public void Addlistener(string title,Action<string> okeyCallback = null , Action noCallback = null)
     {
         this.title.text = title;
         inputField.text = "";
         btnOkey.onClick.AddListener((() =>
         {
             SoundManager.Instance.PlayUISound(SoundType.Button);
-            callback.Invoke(_inputValue);
+            okeyCallback.Invoke(_inputValue);
         }));
         
         btnCancel.onClick.AddListener((() =>
         {
+            noCallback?.Invoke();
             SoundManager.Instance.PlayUISound(SoundType.Button);
             UIManager.Instance.CloseUI<UIInputPopup>();
         }));

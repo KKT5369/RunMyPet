@@ -102,14 +102,25 @@ public class GameManager : SingleTon<GameManager>
     {
         SoundManager.Instance.PlayUISound(SoundType.Clear);
         Time.timeScale = 0;
-        rankData = new()
+        ConfirmData data = new() { title = "뿌뿌뿌뿌이~!!!", body = $"{_score} 점을 획득 했어요~!! \n 랭킹에 이름을 남겨 볼까요?" };
+        PopupManager.Instance.ConfirmPopup(data,(() =>
         {
-            nicName = PlayerPrefs.GetString("myNicName"),
-            score = _score,
-            disrance = (int)_distance,
-        };
-        DataManager.Instance.SetRankData(rankData);
-        UIManager.Instance.OpenUI<UIRank>();
+            PopupManager.Instance.InputPopup("이름을 알려주세요",(value) =>
+            {
+                rankData = new()
+                {
+                    nicName = value,
+                    score = _score,
+                    disrance = (int)_distance,
+                };
+                DataManager.Instance.SetRankData(rankData);
+                UIManager.Instance.CloseUI<UIInputPopup>();
+                UIManager.Instance.OpenUI<UIRank>();
+            });
+        }));
+        
+        
+        
     }
     
     

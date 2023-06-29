@@ -19,28 +19,6 @@ public class UILoby : MonoBehaviour
     {
         SoundManager.Instance.PlayBGM(SoundType.BGM);
         SetAddListener();
-        if (!PlayerPrefs.HasKey(_nicNameKey))
-        {
-            ConfirmData data = new() { title = "아이디없음", body = "이런... 닉네임이 없어요 지금 만들러 가볼까요?" };
-            PopupManager.Instance.ConfirmPopup(data,(() =>
-            {
-                NicCheck("닉네임 생성");
-            }));
-        }
-        else
-        {
-            txtNicName.text = PlayerPrefs.GetString(_nicNameKey);
-        }
-    }
-
-    void NicCheck(string title)
-    {
-        PopupManager.Instance.InputPopup(title,(value) =>
-        {
-            PlayerPrefs.SetString(_nicNameKey, value);
-            txtNicName.text = value;
-            UIManager.Instance.CloseUI<UIInputPopup>();
-        });
     }
 
     public void SetScore()
@@ -58,7 +36,7 @@ public class UILoby : MonoBehaviour
         btnMenu.onClick.AddListener((() =>
         {
             SoundManager.Instance.PlayUISound(SoundType.Button);
-            ButtonPopupData data = new() { btnText1 = "캐릭터 선택(미구현)", btnText2 = "닉네임 변경",btnText3 = "게임 종료"};
+            ButtonPopupData data = new() { btnText1 = "캐릭터 선택(미구현)", btnText2 = "사운드 설정",btnText3 = "게임 종료"};
             PopupManager.Instance.ButtonPopup(data,
             (() =>
             {
@@ -66,14 +44,15 @@ public class UILoby : MonoBehaviour
             }), 
             (() =>
             {
-                NicCheck("닉네임 변경");
+                ConfirmData data = new() { title = "그딴거", body = "없다" };
+                PopupManager.Instance.ConfirmPopup(data);
             }),
             (() => Application.Quit()));
         }));
         btnStart.onClick.AddListener((() =>
         {
             SoundManager.Instance.PlayUISound(SoundType.Button);
-            ConfirmData confirmData = new() { title = "게임시작", body = $"{txtNicName.text} 님 달릴 준비가 됐나요?" };
+            ConfirmData confirmData = new ConfirmData(){ title = "게임시작", body = $" 오늘도 씐나게 달려 보십시다!! let's GO!!" };
             PopupManager.Instance.ConfirmPopup(confirmData,(() => SceneLoadManager.Instance.LoadScene(SceneType.GameScene)));
         }));
         btnRank.onClick.AddListener((() =>
