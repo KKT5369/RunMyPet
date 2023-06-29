@@ -51,11 +51,14 @@ public class UIGame : MonoBehaviour
 
     public void Fade(ItemType itemType)
     {
-        if (isBuff != null)
-        {
-            isBuff[(int)itemType] = buffPos[(int)itemType].GetComponent<Image>().DOFade(0, 0.1f).SetLoops(-1, LoopType.Yoyo);
-        }
+        isBuff[(int)itemType] = buffPos[(int)itemType].GetComponent<Image>().DOFade(0, 0.1f).SetLoops(-1, LoopType.Yoyo);
     }
+
+    private void OnDisable()
+    {
+        ItemManager.Instance.AllStopCoroutine();
+    }
+
     void SetAddListener()
     {
         btnMenu.onClick.AddListener((() =>

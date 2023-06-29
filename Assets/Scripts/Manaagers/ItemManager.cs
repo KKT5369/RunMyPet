@@ -43,5 +43,11 @@ public class ItemManager : SingleTon<ItemManager>
                 break;
         }
     }
+
+    public void AllStopCoroutine()
+    {
+        StopCoroutine(isCorSpeedUp);
+        StopCoroutine(isCorMagnet);
+    }
     
 }

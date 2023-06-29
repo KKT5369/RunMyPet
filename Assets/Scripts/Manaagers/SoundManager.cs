@@ -5,16 +5,18 @@ using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Serialization;
 
 [Serializable]
 public class SerializeDictionary : SerializedDictionary<string,AudioClip>{}
 
 public class SoundManager : SingleTon<SoundManager>
 {
+    private readonly string _audioPath = "Audio/";
+    
     [Header("Sound")]
     [SerializeField]
-    private SerializeDictionary soundClips = new();
-
+    private SerializeDictionary audioClips = new();
 
     private GameObject _goBGM;
     private List<GameObject> _effectSounds;
@@ -56,20 +58,24 @@ public class SoundManager : SingleTon<SoundManager>
     public void Init()
     {
         _effectSoundBox = new GameObject("EffectSoundBox");
-        AudioClip[] _audioClips = Resources.LoadAll<AudioClip>("Audio");
-        
-        foreach (var v in _audioClips)
-        {
-            soundClips.Add(v.name,v);
-        }
+    }
 
+    AudioClip GetAuidoClip(SoundType soundType)
+    {
+        AudioClip audioClip = Resources.Load<AudioClip>($"{_audioPath}{Convert.ToString(soundType)}");
+        audioClips.Add(soundType.ToString(),audioClip);
+
+        return audioClip;
     }
 
     public void PlayBGM(SoundType soundType,float bgVolume = 1f)
     {
         string clipName = soundType.ToString();
         AudioClip clip;
-        if (!soundClips.TryGetValue(clipName, out clip)) return;
+        if (!audioClips.TryGetValue(clipName, out clip))
+        {
+            clip = GetAuidoClip(soundType);
+        };
 
         BgAudioSource.clip = clip;
         BgAudioSource.loop = true;
@@ -82,13 +88,16 @@ public class SoundManager : SingleTon<SoundManager>
     public void PlayUISound(SoundType soundType)
     {
         string clipName = soundType.ToString();
-        AudioClip audioClip;
-        if (!soundClips.TryGetValue(clipName,out audioClip)) return;
+        AudioClip clip;
+        if (!audioClips.TryGetValue(clipName, out clip))
+        {
+            clip = GetAuidoClip(soundType);
+        };
         AudioSource audioSource;
 
         GameObject go = new GameObject(clipName);
         audioSource = go.AddComponent<AudioSource>();
-        audioSource.clip = audioClip;
+        audioSource.clip = clip;
         audioSource.Play();
         Destroy(go,audioSource.clip.length);
     }
@@ -97,8 +106,11 @@ public class SoundManager : SingleTon<SoundManager>
     {
         string clipName = soundType.ToString();
         Transform clipBoxTransform = _effectSoundBox.transform.Find(clipName);
-        AudioClip audioClip;
-        if (!soundClips.TryGetValue(clipName,out audioClip)) return;
+        AudioClip clip;
+        if (!audioClips.TryGetValue(clipName, out clip))
+        {
+            clip = GetAuidoClip(soundType);
+        };
         AudioSource audioSource;
 
         if (clipBoxTransform == null)
@@ -121,7 +133,7 @@ public class SoundManager : SingleTon<SoundManager>
         }
         var goSound = new GameObject(clipName);
         audioSource = goSound.AddComponent<AudioSource>();
-        audioSource.clip = audioClip;
+        audioSource.clip = clip;
         audioSource.volume = volume;
         audioSource.Play();
         goSound.transform.parent = clipBoxTransform;
