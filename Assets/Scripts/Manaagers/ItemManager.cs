@@ -46,8 +46,17 @@ public class ItemManager : SingleTon<ItemManager>
 
     public void AllStopCoroutine()
     {
-        StopCoroutine(isCorSpeedUp);
-        StopCoroutine(isCorMagnet);
+        if (isCorSpeedUp != null)
+        {
+            StopCoroutine(isCorSpeedUp);
+            GameManager.Instance.GameSpeed = 15f;
+        }
+
+        if (isCorMagnet != null)
+        {
+            StopCoroutine(isCorMagnet);
+            isOnMagnet = false;
+        }
     }
     
 }

@@ -87,6 +87,8 @@ public class GameManager : SingleTon<GameManager>
             Destroy(go);
         }
         
+        ItemManager.Instance.AllStopCoroutine();
+        UIManager.Instance.CloseUI<UIGame>();
         _objMaps.Clear();
         gameInit.Invoke();
     }

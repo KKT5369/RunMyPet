@@ -56,7 +56,10 @@ public class UIGame : MonoBehaviour
 
     private void OnDisable()
     {
-        ItemManager.Instance.AllStopCoroutine();
+        foreach (var v in buffPos)
+        {
+            v.SetActive(false);
+        }
     }
 
     void SetAddListener()
