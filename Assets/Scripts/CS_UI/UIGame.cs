@@ -51,6 +51,7 @@ public class UIGame : MonoBehaviour
 
     public void Fade(ItemType itemType)
     {
+        
         isBuff[(int)itemType] = buffPos[(int)itemType].GetComponent<Image>().DOFade(0, 0.1f).SetLoops(-1, LoopType.Yoyo);
     }
     void SetAddListener()
