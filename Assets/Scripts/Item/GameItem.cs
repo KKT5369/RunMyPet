@@ -7,8 +7,7 @@ public class GameItem : MonoBehaviour,ItemBase
 { 
     private ItemType itemType;
     private Array _itemTypes;
-    private float _itemTime = 10f;
-    private float _saveGameSpeed;
+    private float _itemTime = 7f;
     private Random _random = new();
     private UIGame _uiGame;
     
@@ -54,13 +53,12 @@ public class GameItem : MonoBehaviour,ItemBase
     {
         _uiGame.ActiveBuff(itemType,true);
         ItemManager.Instance.isSpeedup = true;
-        _saveGameSpeed = GameManager.Instance.GameSpeed;
-        GameManager.Instance.GameSpeed = _saveGameSpeed * 2;
+        GameManager.Instance.GameSpeed *= 2;
         yield return new WaitForSeconds(_itemTime);
         _uiGame.Fade(itemType);
         yield return new WaitForSeconds(3f);
         _uiGame.ActiveBuff(itemType,false);
-        GameManager.Instance.GameSpeed = _saveGameSpeed;
+        GameManager.Instance.GameSpeedReset();
         ItemManager.Instance.isSpeedup = false;
     }
     

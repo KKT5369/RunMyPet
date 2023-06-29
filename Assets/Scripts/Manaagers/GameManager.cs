@@ -10,8 +10,9 @@ public class GameManager : SingleTon<GameManager>
     public Action gameInit;
     public SceneType purScene;
     
-    private int _score;
+    private readonly float _defaultGameSpeed = 20f;
     private float _gameSpeed;
+    private int _score;
     private PlayerController _playerController;
     public RankData rankData;
     
@@ -22,7 +23,6 @@ public class GameManager : SingleTon<GameManager>
     private int mapQue;
     private GameObject playerGo;
     private float _distance;
-    
 
     public PlayerController Player
     {
@@ -55,8 +55,8 @@ public class GameManager : SingleTon<GameManager>
         _playerController = playerGo.GetComponent<PlayerController>();
         _mapPrefabs = ResourcesLoadManager.Instance.LoadMap();
         mapQue = _mapPrefabs.Count;
+        GameSpeedReset();
         _score = 0;
-        _gameSpeed = 15;
         stageIndex = 0;
         _distance = 0;
     }
@@ -91,6 +91,11 @@ public class GameManager : SingleTon<GameManager>
         UIManager.Instance.CloseUI<UIGame>();
         _objMaps.Clear();
         gameInit.Invoke();
+    }
+
+    public void GameSpeedReset()
+    {
+        _gameSpeed = _defaultGameSpeed;
     }
 
     public void EndGame()

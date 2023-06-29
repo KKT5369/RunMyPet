@@ -29,7 +29,7 @@ public class ItemManager : SingleTon<ItemManager>
             case ItemType.SpeedItem:
                 if (isCorSpeedUp != null)
                 {
-                    GameManager.Instance.GameSpeed = 15f;
+                    GameManager.Instance.GameSpeedReset();
                     StopCoroutine(isCorSpeedUp);
                 }
                 isCorSpeedUp = StartCoroutine(coroutine);
@@ -49,7 +49,7 @@ public class ItemManager : SingleTon<ItemManager>
         if (isCorSpeedUp != null)
         {
             StopCoroutine(isCorSpeedUp);
-            GameManager.Instance.GameSpeed = 15f;
+            GameManager.Instance.GameSpeedReset();
         }
 
         if (isCorMagnet != null)
