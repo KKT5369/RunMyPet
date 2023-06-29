@@ -17,13 +17,7 @@ public class UIRank : MonoBehaviour
     [SerializeField] private Button btnClose;
     [SerializeField] private Button btnReStart;
     [SerializeField] private Button btnGoLobby;
-
-    [Header("MyRank")] 
-    [SerializeField] private TMP_Text txtRank; 
-    [SerializeField] private TMP_Text txtNicName;
-    [SerializeField] private TMP_Text txtDistance;
-    [SerializeField] private TMP_Text txtScore;
-
+    
     private List<GameObject> _rankDatas = new();
     
     private void Awake()
@@ -70,14 +64,6 @@ public class UIRank : MonoBehaviour
             script.Setting(data);
             go.SetActive(true);
             _rankDatas.Add(go);
-        }
-
-        if (GameManager.Instance.rankData != null)
-        {
-            txtRank.text = Convert.ToString(GameManager.Instance.rankData.rank);
-            txtNicName.text = GameManager.Instance.rankData.nicName;
-            txtDistance.text = Convert.ToString($"{GameManager.Instance.rankData.disrance} M");
-            txtScore.text = Convert.ToString($"{GameManager.Instance.rankData.score} 점");
         }
     }
 

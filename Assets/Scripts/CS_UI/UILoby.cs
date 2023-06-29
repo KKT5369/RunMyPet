@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UILoby : MonoBehaviour
 {
-    [SerializeField] private TMP_Text txtNicName;
     [SerializeField] private TMP_Text txtMaxScore;
     
     [SerializeField] private Button btnMenu;
@@ -13,8 +12,6 @@ public class UILoby : MonoBehaviour
     [SerializeField] private Button btnRank;
     [SerializeField] private Button btnRankInit;
 
-    private readonly string _nicNameKey = "myNicName";
-    
     private void Awake()
     {
         SoundManager.Instance.PlayBGM(SoundType.BGM);

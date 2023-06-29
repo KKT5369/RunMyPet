@@ -102,7 +102,7 @@ public class GameManager : SingleTon<GameManager>
     {
         SoundManager.Instance.PlayUISound(SoundType.Clear);
         Time.timeScale = 0;
-        ConfirmData data = new() { title = "뿌뿌뿌뿌이~!!!", body = $"{_score} 점을 획득 했어요~!! \n 랭킹에 이름을 남겨 볼까요?" };
+        ConfirmData data = new() { title = "뿌뿌뿌뿌이~!!!", body = $"{_score} 점을 획득 했어요~!! \n 랭킹에 이름을 남겨 볼까요? \n 김다현 개못하쥬?" };
         PopupManager.Instance.ConfirmPopup(data,
             (() =>
         {
