@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.GetMap();
         }
+        if (col.gameObject.name.Equals("FallCollider"))
+        {
+            GameManager.Instance.EndGame();
+        }
     }
 }
 

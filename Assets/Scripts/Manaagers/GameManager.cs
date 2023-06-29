@@ -10,7 +10,7 @@ public class GameManager : SingleTon<GameManager>
     public Action gameInit;
     public SceneType purScene;
     
-    private readonly float _defaultGameSpeed = 20f;
+    private readonly float _defaultGameSpeed = 15f;
     private float _gameSpeed;
     private int _score;
     private PlayerController _playerController;

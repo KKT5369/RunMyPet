@@ -35,6 +35,10 @@ public class MapBase : MonoBehaviour
         {
             GameManager.Instance.GameSpeed = 0f;
         }
+        if (Input.GetKey(KeyCode.V))
+        {
+            ItemManager.Instance.isSpeedup = true;
+        }
         
 #endif
     }
