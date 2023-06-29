@@ -103,7 +103,8 @@ public class GameManager : SingleTon<GameManager>
         SoundManager.Instance.PlayUISound(SoundType.Clear);
         Time.timeScale = 0;
         ConfirmData data = new() { title = "뿌뿌뿌뿌이~!!!", body = $"{_score} 점을 획득 했어요~!! \n 랭킹에 이름을 남겨 볼까요?" };
-        PopupManager.Instance.ConfirmPopup(data,(() =>
+        PopupManager.Instance.ConfirmPopup(data,
+            (() =>
         {
             PopupManager.Instance.InputPopup("이름을 알려주세요",(value) =>
             {
@@ -116,8 +117,15 @@ public class GameManager : SingleTon<GameManager>
                 DataManager.Instance.SetRankData(rankData);
                 UIManager.Instance.CloseUI<UIInputPopup>();
                 UIManager.Instance.OpenUI<UIRank>();
-            });
-        }));
+            },(() =>
+            {
+                UIManager.Instance.OpenUI<UIRank>();
+            }));
+        }),
+            () =>
+        {
+            UIManager.Instance.OpenUI<UIRank>();
+        });
         
         
         

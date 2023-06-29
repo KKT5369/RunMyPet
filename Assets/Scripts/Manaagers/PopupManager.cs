@@ -49,7 +49,7 @@ public class PopupManager : SingleTon<PopupManager>
         UIManager.Instance.CloseUI<UIPopupMenu>();
     }
 
-    public void InputPopup(string title, Action<string> okeyCallback,Action noCallback = null)
+    public void InputPopup(string title, Action<string> okeyCallback = null,Action noCallback = null)
     {
         if (_uiInputPopup == null) 
         {
@@ -57,10 +57,8 @@ public class PopupManager : SingleTon<PopupManager>
             _uiInputPopup = UIManager.Instance.GetUI<UIInputPopup>().GetComponent<UIInputPopup>();
         }
         UIManager.Instance.OpenUI<UIInputPopup>();
-        _uiInputPopup.Addlistener(title,okeyCallback);
+        _uiInputPopup.Addlistener(title,okeyCallback,noCallback);
     }
-    
-    
 
 }
 
