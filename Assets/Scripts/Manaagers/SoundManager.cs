@@ -62,8 +62,18 @@ public class SoundManager : SingleTon<SoundManager>
 
     AudioClip GetAuidoClip(SoundType soundType)
     {
-        AudioClip audioClip = Resources.Load<AudioClip>($"{_audioPath}{Convert.ToString(soundType)}");
-        audioClips.Add(soundType.ToString(),audioClip);
+        AudioClip audioClip;
+        try
+        {
+            audioClip = Resources.Load<AudioClip>($"{_audioPath}{Convert.ToString(soundType)}");
+            audioClips.Add(soundType.ToString(),audioClip);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"오디오 클립을 가져 오는중 오류 발생 {e}");
+            throw;
+        }
+        
 
         return audioClip;
     }
