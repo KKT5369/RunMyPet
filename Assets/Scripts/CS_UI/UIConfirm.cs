@@ -9,7 +9,6 @@ public class UIConfirm : MonoBehaviour
     [SerializeField] private TMP_Text body;
     [SerializeField] private Button btnOkey;
     [SerializeField] private Button btnCancel;
-    
 
     public void Init(ConfirmData confirmData,Action okeyCallback = null,Action noCallback = null)
     {

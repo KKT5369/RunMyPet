@@ -57,7 +57,7 @@ public class PopupManager : SingleTon<PopupManager>
             _uiInputPopup = UIManager.Instance.GetUI<UIInputPopup>().GetComponent<UIInputPopup>();
         }
         UIManager.Instance.OpenUI<UIInputPopup>();
-        _uiInputPopup.Addlistener(title,okeyCallback,noCallback);
+        _uiInputPopup.Setting(title,okeyCallback,noCallback);
     }
 
 }
