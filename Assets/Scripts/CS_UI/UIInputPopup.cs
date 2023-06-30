@@ -13,20 +13,20 @@ public class UIInputPopup : MonoBehaviour
     [SerializeField] private Button btnCancel;
 
     private string _inputValue;
-    private Action<string> okeyCallback;
-    private Action noCallback;
+    private Action<string> _okeyCallback;
+    private Action _noCallback;
     private void Awake()
     {
         inputField.onEndEdit.AddListener((value) => _inputValue = value);
         Addlistener();
     }
     
-    public void Setting(string title,Action<string> okeyCallback = null , Action noCallback = null)
+    public void Init(string title,Action<string> okeyCallback = null , Action noCallback = null)
     {
         this.title.text = title;
         inputField.text = "";
-        this.okeyCallback = okeyCallback;
-        this.noCallback = noCallback;
+        _okeyCallback = okeyCallback;
+        _noCallback = noCallback;
     }
 
     public void Addlistener()
@@ -34,12 +34,12 @@ public class UIInputPopup : MonoBehaviour
         btnOkey.onClick.AddListener((() =>
         {
             SoundManager.Instance.PlayUISound(SoundType.Button);
-            okeyCallback.Invoke(_inputValue);
+            _okeyCallback.Invoke(_inputValue);
         }));
         
         btnCancel.onClick.AddListener((() =>
         {
-            noCallback?.Invoke();
+            _noCallback?.Invoke();
             SoundManager.Instance.PlayUISound(SoundType.Button);
             UIManager.Instance.CloseUI<UIInputPopup>();
         }));

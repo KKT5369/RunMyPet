@@ -40,7 +40,7 @@ public class PopupManager : SingleTon<PopupManager>
             _uiButtonPopup = UIManager.Instance.GetUI<UIPopupMenu>().GetComponent<UIPopupMenu>();
         }
         UIManager.Instance.OpenUI<UIPopupMenu>();
-        _uiButtonPopup.AddListener(data,btn1,btn2,btn3);
+        _uiButtonPopup.Init(data,btn1,btn2,btn3);
     }
     
     public void CloseButtonPopupUI()
@@ -57,7 +57,7 @@ public class PopupManager : SingleTon<PopupManager>
             _uiInputPopup = UIManager.Instance.GetUI<UIInputPopup>().GetComponent<UIInputPopup>();
         }
         UIManager.Instance.OpenUI<UIInputPopup>();
-        _uiInputPopup.Setting(title,okeyCallback,noCallback);
+        _uiInputPopup.Init(title,okeyCallback,noCallback);
     }
 
 }

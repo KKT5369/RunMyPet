@@ -10,19 +10,33 @@ public class UIConfirm : MonoBehaviour
     [SerializeField] private Button btnOkey;
     [SerializeField] private Button btnCancel;
 
+    private Action _okeyCallback;
+    private Action _noCallback;
+
+    private void Awake()
+    {
+        SetAddlistener();
+    }
+
     public void Init(ConfirmData confirmData,Action okeyCallback = null,Action noCallback = null)
     {
         title.text = confirmData.title;
         body.text = confirmData.body;
+        _okeyCallback = okeyCallback;
+        _noCallback = noCallback;
+    }
+
+    void SetAddlistener()
+    {
         btnOkey.onClick.AddListener((() =>
         {
             SoundManager.Instance.PlayUISound(SoundType.Button);
             UIManager.Instance.CloseUI<UIConfirm>();
-            okeyCallback?.Invoke();
+            _okeyCallback?.Invoke();
         }));
         btnCancel.onClick.AddListener((() =>
         {
-            noCallback?.Invoke();
+            _noCallback?.Invoke();
             SoundManager.Instance.PlayUISound(SoundType.Button);
             UIManager.Instance.CloseUI<UIConfirm>();
         }));
