@@ -9,6 +9,7 @@ public class GameManager : SingleTon<GameManager>
 {
     public Action gameInit;
     public SceneType purScene;
+    public GameType gameType;
     
     private readonly float _defaultGameSpeed = 15f;
     private float _gameSpeed;
@@ -49,11 +50,23 @@ public class GameManager : SingleTon<GameManager>
 
 
     // 맵을 초기상태로 세팅 합니다.
-    public void SettingMap()
+    public void SettingMap(GameType gameType)
     {
-        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player"));
-        _playerController = playerGo.GetComponent<PlayerController>();
-        _mapPrefabs = ResourcesLoadManager.Instance.LoadMap();
+        switch (gameType)
+        {
+            case GameType.Game2D:
+                playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player"));
+                _playerController = playerGo.GetComponent<PlayerController>();
+                _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("");
+                
+                break;
+            case GameType.Game3D:
+                playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player3D"));
+                _playerController = playerGo.GetComponent<PlayerController>();
+                _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("");
+                break;
+        }
+        
         mapQue = _mapPrefabs.Count;
         GameSpeedReset();
         _score = 0;

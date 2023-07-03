@@ -15,8 +15,9 @@ public class StageController : MonoBehaviour
     {
         Time.timeScale = 1;
         UIManager.Instance.OpenUI<UIGame>();
-        GameManager.Instance.SettingMap();
+        GameManager.Instance.SettingMap(GameManager.Instance.gameType);
         GameManager.Instance.GetMap();
         SoundManager.Instance.PlayBGM(SoundType.BGM);
     }
 }
+
