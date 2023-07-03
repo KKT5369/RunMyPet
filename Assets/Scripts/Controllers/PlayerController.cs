@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     [SerializeField] private Animator animator;
+    public bool isJump;
     public float jumpPower = 2;
     private int _jumpIndex;
     private Vector2 _vector2;
@@ -31,7 +33,7 @@ public class PlayerController : MonoBehaviour
         if (_jumpIndex <= 2)
         {
             animator.SetBool("isRun",false);
-            _rigidbody2D.AddForce(Vector2.up * (jumpPower * 200));
+            _rigidbody2D.velocity = Vector2.up * (jumpPower * 4);
             _jumpIndex++;
         }
     }
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
         if (LayerMask.NameToLayer("Floor") == otherLayer)
         {
             animator.SetBool("isRun",true);
+            isJump = false;
             _jumpIndex = 0;
         }
 
