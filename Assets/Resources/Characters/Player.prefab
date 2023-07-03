@@ -193,7 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 764307657098159774}
-  jumpPower: 5
+  isJump: 0
+  jumpPower: 20
 --- !u!114 &764307657243308253
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     [SerializeField] private Animator animator;
     public bool isJump;
-    public float jumpPower = 2;
+    public float jumpPower = 8;
     private int _jumpIndex;
     private Vector2 _vector2;
     
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         if (_jumpIndex <= 2)
         {
             animator.SetBool("isRun",false);
-            _rigidbody2D.velocity = Vector2.up * (jumpPower * 4);
+            _rigidbody2D.velocity = Vector2.up * jumpPower;
             _jumpIndex++;
         }
     }
