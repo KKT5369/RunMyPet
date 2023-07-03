@@ -18,6 +18,12 @@ public enum SceneType
     GameScene,
 }
 
+public enum GameType
+{
+    Game2D,
+    Game3D,
+}
+
 public enum SoundType
 {
     BGM,
