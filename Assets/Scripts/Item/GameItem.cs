@@ -13,7 +13,7 @@ public class GameItem : MonoBehaviour,ItemBase
     
     private void Awake()
     {
-          _itemTypes = Enum.GetValues(typeof(ItemType));
+        _itemTypes = Enum.GetValues(typeof(ItemType));
         itemType = (ItemType)_itemTypes.GetValue(_random.Next(_itemTypes.Length));
     }
 
@@ -67,5 +67,10 @@ public class GameItem : MonoBehaviour,ItemBase
         ItemManager.Instance.ItemAction(this);
         gameObject.SetActive(false);
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        ItemManager.Instance.ItemAction(this);
+        gameObject.SetActive(false);
+    }
 }
