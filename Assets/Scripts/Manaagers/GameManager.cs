@@ -57,7 +57,7 @@ public class GameManager : SingleTon<GameManager>
             case GameType.Game2D:
                 playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player"));
                 _playerController = playerGo.GetComponent<PlayerController>();
-                _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("");
+                _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("Stage2D");
                 
                 break;
             case GameType.Game3D:
