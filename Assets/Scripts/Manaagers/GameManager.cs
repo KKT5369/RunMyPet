@@ -50,7 +50,7 @@ public class GameManager : SingleTon<GameManager>
 
 
     // 맵을 초기상태로 세팅 합니다.
-    public void SettingMap(GameType gameType)
+    public void SettingMap()
     {
         switch (gameType)
         {
@@ -61,9 +61,9 @@ public class GameManager : SingleTon<GameManager>
                 
                 break;
             case GameType.Game3D:
-                playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player3D"));
+                playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Ludo"));
                 _playerController = playerGo.GetComponent<PlayerController>();
-                _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("");
+                _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("Stage3D/");
                 break;
         }
         

@@ -5,13 +5,24 @@ using UnityEngine;
 public class CoinItem : MonoBehaviour,ItemBase
 {
     [SerializeField] private CoinTyep coinTyep;
+    private GameType _gameType;
     readonly int _bronzeCoinScore = 10;
     readonly int _silverCoinScore = 20;
     readonly int _goldCoinScore = 30;
     private CircleCollider2D _collider2D;
+    private CapsuleCollider _collider;
     private void Awake()
     {
-        _collider2D = GetComponent<CircleCollider2D>();
+        _gameType = GameManager.Instance.gameType;
+        switch (_gameType)
+        {
+            case GameType.Game2D:
+                _collider2D = GetComponent<CircleCollider2D>();
+                break;
+            case GameType.Game3D:
+                _collider = GetComponent<CapsuleCollider>();
+                break;
+        }
     }
 
     // ItemBase 인터페이스를 상속 받았으므로 해당 아이템의 이펙트를 작성 합니다.
@@ -35,11 +46,27 @@ public class CoinItem : MonoBehaviour,ItemBase
     {
         if (ItemManager.Instance.isOnMagnet)
         {
-            _collider2D.radius = 4f;
+            switch (_gameType)
+            {
+                case GameType.Game2D:
+                    _collider2D.radius = 4f;
+                    break;
+                case GameType.Game3D:
+                    _collider.radius = 8f;
+                    break;
+            }
         }
         else
         {
-            _collider2D.radius = 0.3f;
+            switch (_gameType)
+            {
+                case GameType.Game2D:
+                    _collider2D.radius = 0.3f;
+                    break;
+                case GameType.Game3D:
+                    _collider.radius = 0.3f;
+                    break;
+            }
         }
     }
 
