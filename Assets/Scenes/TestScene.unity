@@ -541,12 +541,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICharacterSellect
       objectReference: {fileID: 0}
+    - target: {fileID: 5211115415078387575, guid: 00fcacddcc9c8924fa1088c4f1183fd0,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5211115415647016040, guid: 00fcacddcc9c8924fa1088c4f1183fd0,
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5211115415647016040, guid: 00fcacddcc9c8924fa1088c4f1183fd0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211115415647016040, guid: 00fcacddcc9c8924fa1088c4f1183fd0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211115415675972206, guid: 00fcacddcc9c8924fa1088c4f1183fd0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211115415675972206, guid: 00fcacddcc9c8924fa1088c4f1183fd0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211115415675972206, guid: 00fcacddcc9c8924fa1088c4f1183fd0,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
