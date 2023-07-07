@@ -1028,7 +1028,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7002277405380153038}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1068,7 +1068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7002277405620627042}
   - component: {fileID: 7002277405620627043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stage3D_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1348,10 +1348,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -1466,10 +1476,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -1584,10 +1604,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -1702,10 +1732,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -1820,10 +1860,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -1938,10 +1988,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -2056,10 +2116,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -2174,10 +2244,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -2292,10 +2372,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -2410,10 +2500,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -2528,10 +2628,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -2646,10 +2756,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -2764,10 +2884,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -2882,10 +3012,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -3000,10 +3140,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -3118,10 +3268,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -3236,10 +3396,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -3354,10 +3524,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -3472,10 +3652,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -3590,10 +3780,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -3708,10 +3908,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -3826,10 +4036,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -3944,10 +4164,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -4062,10 +4292,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -4180,10 +4420,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -4298,10 +4548,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -4416,10 +4676,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -4534,10 +4804,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -4652,10 +4932,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -4770,10 +5060,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -4888,10 +5188,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -5006,10 +5316,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -5124,10 +5444,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -5242,10 +5572,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -5360,10 +5700,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -5478,10 +5828,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -5596,10 +5956,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -5714,10 +6084,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -5832,10 +6212,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -5950,10 +6340,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -6068,10 +6468,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -6186,10 +6596,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -6304,10 +6724,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -6422,10 +6852,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -6540,10 +6980,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -6658,10 +7108,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -6776,10 +7236,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}
@@ -6894,10 +7364,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568801281797305665, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
         type: 3}
       propertyPath: m_Name
       value: Coin Bronze (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183557289318716560, guid: eff93d3a6c14e3648a925ff48d25d216,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff93d3a6c14e3648a925ff48d25d216, type: 3}

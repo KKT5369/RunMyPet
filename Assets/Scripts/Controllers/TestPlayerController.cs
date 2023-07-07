@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class TestPlayerController : MonoBehaviour
 {
-    private float jumpHeight = 10f;
+    private float jumpHeight = 15f;
     private float jumpDuration = 0.5f;
     private float gravity = -20f;
 
@@ -38,7 +39,7 @@ public class TestPlayerController : MonoBehaviour
 
     public void OnJump(InputValue value)
     {
-        if (_jumpIndex < 3)
+        if (_jumpIndex < 2)
         {
             _moveDir.y = jumpHeight;
             _jumpIndex++;
