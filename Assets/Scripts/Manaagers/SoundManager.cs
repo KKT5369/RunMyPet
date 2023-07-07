@@ -43,7 +43,7 @@ public class SoundManager : SingleTon<SoundManager>
         {
             if (_bgAudioSource == null)
             {
-                _bgAudioSource = GOBgSound.AddComponent<AudioSource>();
+                _bgAudioSource = GOBgSound.GetComponent<AudioSource>();
             }
 
             return _bgAudioSource;
