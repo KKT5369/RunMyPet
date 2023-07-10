@@ -34,7 +34,7 @@ public class UILoby : MonoBehaviour
         btnMenu.onClick.AddListener((() =>
         {
             SoundManager.Instance.PlayUISound(SoundType.Button);
-            ButtonPopupData data = new() { btnText1 = "캐릭터 선택(미구현)", btnText2 = "사운드 설정",btnText3 = "게임 종료"};
+            ButtonPopupData data = new() { btnText1 = "캐릭터 선택", btnText2 = "사운드 설정",btnText3 = "게임 종료"};
             PopupManager.Instance.ButtonPopup(data,
             (() =>
             {

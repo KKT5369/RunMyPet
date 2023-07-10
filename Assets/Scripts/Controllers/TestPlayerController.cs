@@ -7,41 +7,39 @@ using UnityEngine.InputSystem;
 
 public class TestPlayerController : MonoBehaviour
 {
-    private float jumpHeight = 15f;
-    private float jumpDuration = 0.5f;
-    private float gravity = -20f;
+    private float _jumpHeight = 15f;
+    private float _gravity = -20f;
 
-    private float verticalSpeed = 0f;
-    private bool isJumping = false;
+    private float _speed;
     private int _jumpIndex;
-    private CharacterController controller;
+    private CharacterController _controller;
 
     private Vector3 _moveDir;
     
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        _controller = GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        if (controller.isGrounded)
+        if (_controller.isGrounded)
         {
-            verticalSpeed = 0f;
+            _speed = 0f;
             _jumpIndex = 0;
         }
 
-        _moveDir.y += gravity * Time.deltaTime;
+        _moveDir.y += _gravity * Time.deltaTime;
  
         // 캐릭터 움직임.
-        controller.Move(_moveDir * Time.deltaTime);
+        _controller.Move(_moveDir * Time.deltaTime);
     }
 
     public void OnJump(InputValue value)
     {
         if (_jumpIndex < 2)
         {
-            _moveDir.y = jumpHeight;
+            _moveDir.y = _jumpHeight;
             _jumpIndex++;
         }
     }

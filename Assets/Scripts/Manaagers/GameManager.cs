@@ -62,7 +62,6 @@ public class GameManager : SingleTon<GameManager>
         switch (gameType)
         {
             case GameType.Game2D:
-                Debug.Log($"{_sellectChar}");
                 playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter($"Char2D/{_sellectChar}"));
                 _playerController = playerGo.GetComponent<PlayerController>();
                 _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("Stage2D");
