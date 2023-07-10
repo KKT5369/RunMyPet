@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     [SerializeField] private Animator animator;
+    public SpriteRenderer sprite;
     public bool isJump;
     public float jumpPower = 8;
     private int _jumpIndex;

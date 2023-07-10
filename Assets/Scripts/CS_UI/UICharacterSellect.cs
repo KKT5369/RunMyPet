@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using Image = UnityEngine.UIElements.Image;
 
 
 public class UICharacterSellect : MonoBehaviour
@@ -25,11 +28,14 @@ public class UICharacterSellect : MonoBehaviour
 
     void SettingItem()
     {
-        int count = Resources.LoadAll("Characters").Length;
-
-        for (int i = 0; i < count; i++)
+        var objects = Resources.LoadAll("Characters/Char2D");
+        
+        for (int i = 0; i < objects.Length; i++)
         { 
+            Sprite sp = objects[i].GetComponent<PlayerController>().sprite.sprite;
+            string name = objects[i].name;
             var go = Instantiate(characterItem, sellectRect);
+            go.GetComponent<CharSellectItem>().Setting(name,sp);
             go.SetActive(true);
         }
         

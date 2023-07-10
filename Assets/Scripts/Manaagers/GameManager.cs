@@ -11,6 +11,7 @@ public class GameManager : SingleTon<GameManager>
     public SceneType purScene;
     public GameType gameType;
     
+    
     private readonly float _defaultGameSpeed = 15f;
     private float _gameSpeed;
     private int _score;
@@ -25,6 +26,13 @@ public class GameManager : SingleTon<GameManager>
     private GameObject playerGo;
     private float _distance;
 
+    private string _sellectChar;
+
+    public string SellectChar
+    {
+        set => _sellectChar = value;
+    }
+    
     public PlayerController Player
     {
         get => _playerController;
@@ -55,7 +63,7 @@ public class GameManager : SingleTon<GameManager>
         switch (gameType)
         {
             case GameType.Game2D:
-                playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Player"));
+                playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter(_sellectChar));
                 _playerController = playerGo.GetComponent<PlayerController>();
                 _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("Stage2D");
                 
