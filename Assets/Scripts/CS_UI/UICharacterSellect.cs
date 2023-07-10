@@ -21,9 +21,15 @@ public class UICharacterSellect : MonoBehaviour
 
     private string _sellectChar;
 
+    public string SellectChar
+    {
+        set => _sellectChar = value;
+    }
+
     private void Awake()
     {
         SettingItem();
+        SetAddListener();
     }
 
     void SettingItem()
@@ -31,14 +37,42 @@ public class UICharacterSellect : MonoBehaviour
         var objects = Resources.LoadAll("Characters/Char2D");
         
         for (int i = 0; i < objects.Length; i++)
-        { 
+        {
             Sprite sp = objects[i].GetComponent<PlayerController>().sprite.sprite;
             string name = objects[i].name;
             var go = Instantiate(characterItem, sellectRect);
             go.GetComponent<CharSellectItem>().Setting(name,sp);
             go.SetActive(true);
         }
-        
+    }
+
+    void SetAddListener()
+    {
+        btnOkey.onClick.AddListener((() =>
+        {
+            if (string.IsNullOrEmpty(_sellectChar))
+            {
+                ConfirmData data = new() { title = "알림", body = "캐릭터를 선택 해주세요" };
+                PopupManager.Instance.ConfirmPopup(data);
+            }
+            else
+            {
+                
+                ConfirmData data = new() { title = "알림", body = $"{_sellectChar} 캐릭터로 달려 볼까요?" };
+                PopupManager.Instance.ConfirmPopup(data, () =>
+                {
+                    GameManager.Instance.SellectChar = _sellectChar;
+                    CloseUI();
+                });
+            }
+        }));
+        btnClose.onClick.AddListener(CloseUI);
+        btnCancel.onClick.AddListener(CloseUI);
+    }
+
+    void CloseUI()
+    {
+        UIManager.Instance.CloseUI<UICharacterSellect>();
     }
     
 }

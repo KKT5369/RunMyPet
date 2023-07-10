@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,12 +11,19 @@ public class CharSellectItem : MonoBehaviour
 {
     [SerializeField] private Button btnSellect;
     [SerializeField] private Image img;
-    
+
+    private UICharacterSellect _ui;
+
+    private void Start()
+    {
+        _ui = UIManager.Instance.GetUI<UICharacterSellect>().GetComponent<UICharacterSellect>();
+    }
+
     public void Setting(string name,Sprite sprite)
     {
         btnSellect.onClick.AddListener((() =>
         {
-            GameManager.Instance.SellectChar = name;
+            _ui.SellectChar = name;
         }));
         img.sprite = sprite;
     }

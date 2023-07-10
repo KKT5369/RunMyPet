@@ -38,7 +38,7 @@ public class UILoby : MonoBehaviour
             PopupManager.Instance.ButtonPopup(data,
             (() =>
             {
-                
+                UIManager.Instance.OpenUI<UICharacterSellect>();
             }), 
             (() =>
             {

@@ -26,7 +26,7 @@ public class GameManager : SingleTon<GameManager>
     private GameObject playerGo;
     private float _distance;
 
-    private string _sellectChar;
+    private string _sellectChar = "Player";
 
     public string SellectChar
     {
@@ -56,14 +56,14 @@ public class GameManager : SingleTon<GameManager>
         set => _gameSpeed = value;
     }
 
-
     // 맵을 초기상태로 세팅 합니다.
     public void SettingMap()
     {
         switch (gameType)
         {
             case GameType.Game2D:
-                playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter(_sellectChar));
+                Debug.Log($"{_sellectChar}");
+                playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter($"Char2D/{_sellectChar}"));
                 _playerController = playerGo.GetComponent<PlayerController>();
                 _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("Stage2D");
                 
