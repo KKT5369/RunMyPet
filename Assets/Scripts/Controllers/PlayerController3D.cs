@@ -5,14 +5,16 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TestPlayerController : MonoBehaviour
+public class PlayerController3D : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
+    private CharacterController _controller;
+    
     private float _jumpHeight = 15f;
     private float _gravity = -20f;
 
     private float _speed;
     private int _jumpIndex;
-    private CharacterController _controller;
 
     private Vector3 _moveDir;
     
@@ -25,6 +27,7 @@ public class TestPlayerController : MonoBehaviour
     {
         if (_controller.isGrounded)
         {
+            animator.SetBool("isRun",true);
             _speed = 0f;
             _jumpIndex = 0;
         }
@@ -39,8 +42,31 @@ public class TestPlayerController : MonoBehaviour
     {
         if (_jumpIndex < 2)
         {
+            animator.SetBool("isRun",false);
             _moveDir.y = _jumpHeight;
             _jumpIndex++;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        int otherLayer = collision.gameObject.layer;
+
+        if (LayerMask.NameToLayer("Enemy") == otherLayer)
+        {
+            _jumpIndex = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name.Equals("EndPoint(Clone)"))
+        {
+            GameManager.Instance.GetMap();
+        }
+        if (other.gameObject.name.Equals("FallCollider"))
+        {
+            GameManager.Instance.EndGame();
         }
     }
 }

@@ -7,10 +7,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D _rigidbody2D;
     [SerializeField] private Animator animator;
+    private Rigidbody2D _rigidbody2D;
     public SpriteRenderer sprite;
-    public bool isJump;
     public float jumpPower = 8;
     private int _jumpIndex;
     private Vector2 _vector2;
@@ -48,7 +47,6 @@ public class PlayerController : MonoBehaviour
         if (LayerMask.NameToLayer("Floor") == otherLayer)
         {
             animator.SetBool("isRun",true);
-            isJump = false;
             _jumpIndex = 0;
         }
 
