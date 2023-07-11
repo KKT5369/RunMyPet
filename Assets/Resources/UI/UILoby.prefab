@@ -1669,6 +1669,7 @@ MonoBehaviour:
   txtMaxScore: {fileID: 8964508472778039371}
   btnMenu: {fileID: 8964508472117369712}
   btnStart: {fileID: 8964508473818538346}
+  btnStart3dGame: {fileID: 6205751112576089081}
   btnRank: {fileID: 5542445989429287562}
   btnRankInit: {fileID: 1619695300}
 --- !u!1 &8964508473818538348

@@ -13,10 +13,14 @@ public class UILoby : MonoBehaviour
     [SerializeField] private Button btnRank;
     [SerializeField] private Button btnRankInit;
 
+    private GameObject playerGo;
+    
     private void Awake()
     {
         SoundManager.Instance.PlayBGM(SoundType.BGM);
         SetAddListener();
+        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter($"Char2D/{GameManager.Instance.SellectChar}"));
+        playerGo.transform.position = Vector3.zero;
     }
 
     public void SetScore()
@@ -29,6 +33,16 @@ public class UILoby : MonoBehaviour
         SetScore();
     }
 
+    public void CharChange()
+    {
+        if (playerGo !=null)
+        {
+            Destroy(playerGo);
+        }
+        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter($"Char2D/{GameManager.Instance.SellectChar}"));
+        playerGo.transform.position = Vector3.zero;
+    }
+    
     void SetAddListener()
     {
         btnMenu.onClick.AddListener((() =>

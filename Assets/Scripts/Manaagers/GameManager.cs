@@ -30,6 +30,7 @@ public class GameManager : SingleTon<GameManager>
 
     public string SellectChar
     {
+        get => _sellectChar;
         set => _sellectChar = value;
     }
     

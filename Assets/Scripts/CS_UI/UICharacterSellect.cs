@@ -57,11 +57,11 @@ public class UICharacterSellect : MonoBehaviour
             }
             else
             {
-                
                 ConfirmData data = new() { title = "알림", body = $"{_sellectChar} 캐릭터로 달려 볼까요?" };
                 PopupManager.Instance.ConfirmPopup(data, () =>
                 {
                     GameManager.Instance.SellectChar = _sellectChar;
+                    UIManager.Instance.GetUI<UILoby>().GetComponent<UILoby>().CharChange();
                     CloseUI();
                 });
             }
