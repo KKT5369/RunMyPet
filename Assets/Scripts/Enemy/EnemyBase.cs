@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,23 @@ public class EnemyBase : MonoBehaviour
         if(col.gameObject.layer.Equals(8))
         {
             Vector2 colPos = col.contacts[0].normal;
+            if (ItemManager.Instance.isSpeedup || colPos.y <= -0.5f)
+            {
+                SoundManager.Instance.PlayEffect(SoundType.Grow);
+                StartCoroutine(nameof(Die));
+            }
+            else
+            {
+                GameManager.Instance.EndGame();
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer.Equals(8))
+        {
+            Vector2 colPos = collision.contacts[0].normal;
             if (ItemManager.Instance.isSpeedup || colPos.y <= -0.5f)
             {
                 SoundManager.Instance.PlayEffect(SoundType.Grow);
