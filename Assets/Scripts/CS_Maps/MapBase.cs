@@ -9,7 +9,7 @@ public class MapBase : MonoBehaviour
     private int index = 0;
     protected float pivotPos = -50;
     
-    private int _floorActiveNum = 3;  // 켜져있는 floor 개수
+    private int _floorActiveNum = 4;  // 켜져있는 floor 개수
 
     [SerializeField] private Transform pieceTransform;
 
@@ -63,7 +63,7 @@ public class MapBase : MonoBehaviour
         }
 
         var finshObj = ResourcesLoadManager.Instance.GetEndPoint();
-        var go = Instantiate(finshObj, floors[childCount - 1].transform);
+        Instantiate(finshObj, floors[childCount - 2].transform);
     }
 
     protected void MapSwitch()
