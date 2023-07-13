@@ -20,13 +20,13 @@ public class UpDownEnemy : EnemyBase
         if(isDie) return;
         if (movingUp)
         {
-            _rig.velocity = new Vector2(_rig.velocity.x, moveSpeed);
+            _rig2D.velocity = new Vector2(_rig2D.velocity.x, moveSpeed);
             if (transform.position.y >= initialY + moveDistance)
                 movingUp = false;
         }
         else
         {
-            _rig.velocity = new Vector2(_rig.velocity.x, -moveSpeed);
+            _rig2D.velocity = new Vector2(_rig2D.velocity.x, -moveSpeed);
             if (transform.position.y <= initialY - moveDistance)
                 movingUp = true;
         }
