@@ -11,8 +11,9 @@ public class StageController : MonoBehaviour
         GameManager.Instance.gameInit = Init;
         if (GameManager.Instance.gameType == GameType.Game3D)
         {
-            Camera.main.transform.position = new Vector3(-10, 8, -22);
-            Camera.main.transform.rotation = Quaternion.Euler(20, 0, 0);
+            Camera.main.orthographic = false;
+            Camera.main.transform.position = new Vector3(-30, 8, -22);
+            Camera.main.transform.rotation = Quaternion.Euler(15, 50, 0);
         }
     }
 

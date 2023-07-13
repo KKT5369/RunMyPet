@@ -17,7 +17,6 @@ public class UILoby : MonoBehaviour
     
     private void Awake()
     {
-        SoundManager.Instance.PlayBGM(SoundType.BGM);
         SetAddListener();
         playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter(GameManager.Instance.SellectChar));
         playerGo.transform.position = Vector3.zero;

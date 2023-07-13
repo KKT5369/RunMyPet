@@ -8,10 +8,11 @@ public class ResourcesLoadManager : SingleTon<ResourcesLoadManager>
     private readonly string _stage = "Stage";
     private readonly string _Char = "Char";
 
+    private string _gameType;
     public List<GameObject> LoadMap()
     {
-        string gameType = GameManager.Instance.gameType.ToString();
-        string mapPath = $"{gameType}/{_stage}";
+        _gameType = GameManager.Instance.gameType.ToString();
+        string mapPath = $"{_gameType}/{_stage}";
         var go = Resources.LoadAll<MapBase>(mapPath);
         List<GameObject> gos = new List<GameObject>();
 
@@ -25,9 +26,17 @@ public class ResourcesLoadManager : SingleTon<ResourcesLoadManager>
 
     public GameObject LoadCharacter(string path)
     {
-        string gameType = GameManager.Instance.gameType.ToString();
-        string _path = $"{gameType}/{_Char}/{path}";
+        _gameType = GameManager.Instance.gameType.ToString();
+        string _path = $"{_gameType}/{_Char}/{path}";
         var go = Resources.Load(_path) as GameObject;
+        return go;
+    }
+
+    public GameObject GetEndPoint()
+    {
+        _gameType = GameManager.Instance.gameType.ToString();
+        var go = Resources.Load($"{_gameType}/EndPoint") as GameObject;
+        
         return go;
     }
     

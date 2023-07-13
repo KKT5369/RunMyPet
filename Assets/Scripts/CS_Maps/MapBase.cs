@@ -8,6 +8,8 @@ public class MapBase : MonoBehaviour
     private float _pos;
     private int index = 0;
     protected float pivotPos = -50;
+    
+    private int _floorActiveNum = 3;  // 켜져있는 floor 개수
 
     [SerializeField] private Transform pieceTransform;
 
@@ -54,16 +56,19 @@ public class MapBase : MonoBehaviour
             floorPosx += 50;
             floors[i] = floor;
         }
-        floors[0].gameObject.SetActive(true);
-        floors[1].gameObject.SetActive(true);
 
-        var finshObj = Resources.Load("EndPoint");
-        var go = Instantiate(finshObj, floors[childCount - 1].transform) as GameObject;
+        for (int i = 0; i < _floorActiveNum; i++)
+        {
+            floors[i].gameObject.SetActive(true);
+        }
+
+        var finshObj = ResourcesLoadManager.Instance.GetEndPoint();
+        var go = Instantiate(finshObj, floors[childCount - 1].transform);
     }
 
     protected void MapSwitch()
     {
-        if (index == floors.Length - 2)
+        if (index == floors.Length - _floorActiveNum)
         {
             return;
         }
@@ -72,7 +77,7 @@ public class MapBase : MonoBehaviour
         {
             pivotPos -= 50;
             floors[index].gameObject.SetActive(false);
-            floors[index + 2].gameObject.SetActive(true);
+            floors[index + _floorActiveNum].gameObject.SetActive(true);
             index++;
         }
     }
