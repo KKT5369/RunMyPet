@@ -1016,7 +1016,7 @@ GameObject:
   - component: {fileID: 2594434982763104696}
   - component: {fileID: 2594434982763104703}
   m_Layer: 8
-  m_Name: Ludo
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

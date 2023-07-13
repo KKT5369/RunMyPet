@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class ResourcesLoadManager : SingleTon<ResourcesLoadManager>
 {
-    private readonly string _mapPath = "Maps/";
-    private readonly string _charPath = "Characters/";
-    
+    private readonly string _stage = "Stage";
+    private readonly string _Char = "Char";
 
-    public List<GameObject> LoadMap(string path)
+    public List<GameObject> LoadMap()
     {
-        string mapPath = _mapPath + path;
+        string gameType = GameManager.Instance.gameType.ToString();
+        string mapPath = $"{gameType}/{_stage}";
         var go = Resources.LoadAll<MapBase>(mapPath);
         List<GameObject> gos = new List<GameObject>();
 
@@ -25,9 +25,11 @@ public class ResourcesLoadManager : SingleTon<ResourcesLoadManager>
 
     public GameObject LoadCharacter(string path)
     {
-        string _path = _charPath + path;
+        string gameType = GameManager.Instance.gameType.ToString();
+        string _path = $"{gameType}/{_Char}/{path}";
         var go = Resources.Load(_path) as GameObject;
         return go;
     }
+    
     
 }

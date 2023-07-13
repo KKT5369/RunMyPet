@@ -34,7 +34,7 @@ public class UICharacterSellect : MonoBehaviour
 
     void SettingItem()
     {
-        var objects = Resources.LoadAll("Characters/Char2D");
+        var objects = Resources.LoadAll("Game2D/Char");
         
         for (int i = 0; i < objects.Length; i++)
         {

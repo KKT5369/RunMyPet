@@ -60,20 +60,22 @@ public class GameManager : SingleTon<GameManager>
     // 맵을 초기상태로 세팅 합니다.
     public void SettingMap()
     {
-        switch (gameType)
-        {
-            case GameType.Game2D:
-                playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter($"Char2D/{_sellectChar}"));
-                _playerController = playerGo.GetComponent<PlayerController>();
-                _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("Stage2D");
-                
-                break;
-            case GameType.Game3D:
-                playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Ludo"));
-                _playerController = playerGo.GetComponent<PlayerController>();
-                _mapPrefabs = ResourcesLoadManager.Instance.LoadMap("Stage3D/");
-                break;
-        }
+        // switch (gameType)
+        // {
+        //     case GameType.Game2D:
+        //         
+        //         
+        //         break;
+        //     case GameType.Game3D:
+        //         playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter("Ludo"));
+        //         _playerController = playerGo.GetComponent<PlayerController>();
+        //         _mapPrefabs = ResourcesLoadManager.Instance.LoadMap();
+        //         break;
+        // }
+        
+        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter(_sellectChar));
+        _playerController = playerGo.GetComponent<PlayerController>();
+        _mapPrefabs = ResourcesLoadManager.Instance.LoadMap();
         
         mapQue = _mapPrefabs.Count;
         GameSpeedReset();

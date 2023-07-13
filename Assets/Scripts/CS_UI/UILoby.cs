@@ -19,7 +19,7 @@ public class UILoby : MonoBehaviour
     {
         SoundManager.Instance.PlayBGM(SoundType.BGM);
         SetAddListener();
-        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter($"Char2D/{GameManager.Instance.SellectChar}"));
+        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter(GameManager.Instance.SellectChar));
         playerGo.transform.position = Vector3.zero;
     }
 
@@ -39,7 +39,7 @@ public class UILoby : MonoBehaviour
         {
             Destroy(playerGo);
         }
-        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter($"Char2D/{GameManager.Instance.SellectChar}"));
+        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter(GameManager.Instance.SellectChar));
         playerGo.transform.position = Vector3.zero;
     }
     
