@@ -8,50 +8,48 @@ using UnityEngine.InputSystem;
 public class PlayerController3D : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    private CharacterController _controller;
-    
-    private float _jumpHeight = 15f;
-    private float _gravity = -20f;
-
-    private float _speed;
+    private Rigidbody _rigidbody;
+    public float jumpPower = 20;
     private int _jumpIndex;
-
-    private Vector3 _moveDir;
+    private Vector2 _pos;
     
-    void Start()
+    private void Awake()
     {
-        _controller = GetComponent<CharacterController>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        if (_controller.isGrounded)
-        {
-            animator.SetBool("isRun",true);
-            _speed = 0f;
-            _jumpIndex = 0;
-        }
-
-        _moveDir.y += _gravity * Time.deltaTime;
- 
-        // 캐릭터 움직임.
-        _controller.Move(_moveDir * Time.deltaTime);
+#if UNITY_EDITOR
+        transform.Translate(_pos * 10 * Time.fixedDeltaTime);
+#endif
     }
 
     public void OnJump(InputValue value)
     {
-        if (_jumpIndex < 2)
+        if (_jumpIndex <= 2)
         {
             animator.SetBool("isRun",false);
-            _moveDir.y = _jumpHeight;
+            animator.Play("Jump", -1, 0);
+            _rigidbody.velocity = Vector2.up * jumpPower;
             _jumpIndex++;
         }
+    }
+
+    public void OnMove(InputValue value)
+    {
+        _pos = value.Get<Vector2>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         int otherLayer = collision.gameObject.layer;
-
+        if (LayerMask.NameToLayer("Floor") == otherLayer)
+        {
+            animator.SetBool("isRun",true);
+            _jumpIndex = 0;
+        }
+        
         if (LayerMask.NameToLayer("Enemy") == otherLayer)
         {
             _jumpIndex = 0;
