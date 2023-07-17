@@ -70,7 +70,6 @@ public class GameItem : MonoBehaviour,ItemBase
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("왜?");
         ItemManager.Instance.ItemAction(this);
         gameObject.SetActive(false);
     }
