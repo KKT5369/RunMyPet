@@ -61,7 +61,7 @@ public class UICharacterSellect : MonoBehaviour
                 PopupManager.Instance.ConfirmPopup(data, () =>
                 {
                     GameManager.Instance.SellectChar = _sellectChar;
-                    UIManager.Instance.GetUI<UILoby>().GetComponent<UILoby>().CharChange();
+                    UIManager.Instance.GetUI<UILoby>().GetComponent<UILoby>().CharChange.Invoke();
                     CloseUI();
                 });
             }

@@ -32,6 +32,7 @@ public class UISelectMod : MonoBehaviour
             PopupManager.Instance.ConfirmPopup(data,(() =>
             {
                 GameManager.Instance.gameType = _selectGameType;
+                UIManager.Instance.GetUI<UILoby>().GetComponent<UILoby>().lobyMapSetting.Invoke();
                 Close();
             }));
         }));

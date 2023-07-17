@@ -12,13 +12,13 @@ public class UILoby : MonoBehaviour
     [SerializeField] private Button btnRank;
     [SerializeField] private Button btnRankInit;
 
-    private GameObject playerGo;
     
+    public Action lobyMapSetting;
+    public Action CharChange;
     private void Awake()
     {
         SetAddListener();
-        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter(GameManager.Instance.SellectChar));
-        playerGo.transform.position = Vector3.zero;
+        
     }
 
     public void SetScore()
@@ -31,15 +31,7 @@ public class UILoby : MonoBehaviour
         SetScore();
     }
 
-    public void CharChange()
-    {
-        if (playerGo !=null)
-        {
-            Destroy(playerGo);
-        }
-        playerGo = Instantiate(ResourcesLoadManager.Instance.LoadCharacter(GameManager.Instance.SellectChar));
-        playerGo.transform.position = Vector3.zero;
-    }
+    
     
     void SetAddListener()
     {
