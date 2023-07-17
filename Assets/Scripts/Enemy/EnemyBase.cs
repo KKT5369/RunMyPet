@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
@@ -11,7 +12,7 @@ public class EnemyBase : MonoBehaviour
     protected Collider _col;
     protected float force = 5;
     protected bool isDie;
-    
+
     protected void Awake()
     {
         switch (GameManager.Instance.gameType)
@@ -25,7 +26,6 @@ public class EnemyBase : MonoBehaviour
                 _col = GetComponent<Collider>();
                 break;
         }
-        
     }
 
     protected void OnCollisionEnter2D(Collision2D col)
@@ -41,6 +41,7 @@ public class EnemyBase : MonoBehaviour
             else
             {
                 GameManager.Instance.EndGame();
+                
             }
         }
     }
