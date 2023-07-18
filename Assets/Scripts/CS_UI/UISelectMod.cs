@@ -14,6 +14,7 @@ public class UISelectMod : MonoBehaviour
 
     private GameType _selectGameType;
     
+    
     private void Awake()
     {
         SetAddListener();
